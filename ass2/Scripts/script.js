@@ -1,4 +1,4 @@
-﻿function getColType(table, col) {
+function getColType(table, col) {
     let val1 = table.rows[1].getElementsByTagName("td")[col].textContent.toLowerCase();
     
     let date = Date.parse(val1);
@@ -65,4 +65,77 @@ document.addEventListener("DOMContentLoaded", function(event) {
             sortTable(table, col);
         };
     }
+    
+    var reset = document.getElementById("reset");
+    reset.addEventListener("click", resetTable);  
+    
+    var submit = document.getElementById("submit");
+    submit.addEventListener("click", putTable);
+    
+    var refresh = document.getElementById("refresh");
+    refresh.addEventListener("click", refreshTable);
+    
+    document.getElementById("top_selling_items_form").onsubmit = function() {
+        return false;
+    };
+    
 });
+
+function resetTable() {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", refreshTable);
+    xhr.open("GET", "https://wt.ops.labs.vu.nl/api20/412d87b0/reset");
+    xhr.send();
+}
+
+function refreshTable() {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", updateTable);
+    xhr.responseType = "json";        
+    xhr.open("GET", "https://wt.ops.labs.vu.nl/api20/412d87b0");
+    xhr.send();
+}
+
+function putTable() {
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", refreshTable);
+    xhr.responseType = "json";        
+    var brand = document.getElementsByName("brand")[0];
+    var model = document.getElementsByName("model")[0];
+    var os = document.getElementsByName("os")[0];
+    var image = document.getElementsByName("image")[0];
+    var screensize = document.getElementsByName("screensize")[0];
+
+    var queryString = "brand=" + encodeURIComponent(brand.value) + 
+        "&model=" + encodeURIComponent(model.value) + 
+        "&os=" + encodeURIComponent(os.value) + 
+        "&image=" + encodeURIComponent(image.value) + 
+        "&screensize=" + encodeURIComponent(screensize.value);
+    xhr.open("POST", "https://wt.ops.labs.vu.nl/api20/412d87b0?" + queryString);
+    console.log("https://wt.ops.labs.vu.nl/api20/412d87b0?" + queryString);
+    xhr.send();
+}
+
+function updateTable() {
+    var topSellingItemTable = document.getElementById("top_selling_items_table").getElementsByTagName("tbody")[0];
+    if (this.status === 200) {
+        var items = this.response;
+        topSellingItemTable.innerHTML = "<tr>";
+        for (var i = 0; i < items.length; i++) {
+            console.log(items[i]);
+            var responsea = "<td>" + items[i].brand + "</td>" +
+                "<td>" + items[i].model + "</td>" +
+                "<td>" + items[i].os + "</td>" +
+                "<td>" + "<img src='" + items[i].image + "'></td>" +
+                "<td>" + items[i].screensize + "</td>";
+            
+            topSellingItemTable.innerHTML = topSellingItemTable.innerHTML + responsea;
+        }
+            topSellingItemTable.innerHTML = topSellingItemTable.innerHTML + "</tr>";
+
+    } else {
+      movieInfo.innerHTML = "Error";
+    }
+}
+
+

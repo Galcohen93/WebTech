@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -61,8 +61,8 @@
         <div>
             <section id="top_selling_items">
                 <h2>Top selling items</h2>
-                <form action="https://wt.ops.few.vu.nl/api20/412d87b0" method="post">
-                    <table>
+                <form id="top_selling_items_form">
+                    <table id="top_selling_items_table">
                         <caption>Top selling items</caption>
                         <thead>
                             <tr>
@@ -113,9 +113,11 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <input type="submit" value="Add item">
+                    <button id="submit">Submit</button>
+                    <button id="reset">Reset</button>
+                    <button id="refresh">Refresh</button>
                     <button>View shopping cart</button>
-                </form>                
+                </form>
             </section>
             <section id="shopping_cart">
                 <h2>Your shopping cart</h2>
