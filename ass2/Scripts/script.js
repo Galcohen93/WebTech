@@ -27,6 +27,13 @@ function putTable() {
     xhr.open("POST", "https://wt.ops.labs.vu.nl/api20/412d87b0");
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.send(queryString);
+
+    brand.value = "";
+    model.value = "";
+    os.value = "";
+    image.value = "";
+    screensize.value = "";
+
     return false;
 }
 
