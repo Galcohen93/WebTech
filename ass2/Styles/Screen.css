@@ -163,7 +163,14 @@ table th {
     padding: 0.5rem;
     text-align: left;
     border: 1px solid lightgray;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
+}
+th.sorted.ascending:after {
+    content: "  \2191";
+}
+
+th.sorted.descending:after {
+    content: " \2193";
 }
 table thead tr {
     background-color: #333;
@@ -190,6 +197,9 @@ form input:focus {
 form input::placeholder {
     color: inherit;
     font-style: italic;
+}
+form input[type=submit] {
+    float: left;
 }
 
 /* General buttons + their hovers*/

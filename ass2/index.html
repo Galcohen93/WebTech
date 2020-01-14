@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,11 @@
     <link rel="stylesheet" type="text/css" href="Styles/Print.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-	<script src="Scripts/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script src="Scripts/tablesort.js"></script>
+    <script src="Scripts/script.js"></script>
 </head>
 <body>
     <header>
@@ -61,7 +65,7 @@
         <div>
             <section id="top_selling_items">
                 <h2>Top selling items</h2>
-                <form id="top_selling_items_form">
+                <form id="top_selling_items_form" onsubmit="return putTable()">
                     <table id="top_selling_items_table">
                         <caption>Top selling items</caption>
                         <thead>
@@ -69,39 +73,11 @@
                                 <th>Brand name</th>
                                 <th>Model</th>
                                 <th>Operating System</th>
-                                <th>Image</th>
+                                <th class="no-sort">Image</th>
                                 <th>Screen size</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Apple</td>
-                                <td>iPhone X</td>
-                                <td>iOS</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png" alt="Apple iPhone X"></td>
-                                <td>5.8</td>
-                            </tr>
-                            <tr>
-                                <td>Apple</td>
-                                <td>iPhone Xs</td>
-                                <td>iOS</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/200px-IPhone_X_vector.svg.png" alt="Apple iPhone Xs"></td>
-                                <td>5.8</td>
-                            </tr>
-                            <tr>
-                                <td>Samsung</td>
-                                <td>Galaxy s10</td>
-                                <td>Android</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Samsung_Galaxy_S10%2B.png" alt="Samsung Galaxy s10"></td>
-                                <td>6.1</td>
-                            </tr>
-                            <tr>
-                                <td>Google</td>
-                                <td>Pixel 3</td>
-                                <td>Android</td>
-                                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Pixel_3_schematic.svg/117px-Pixel_3_schematic.svg.png" alt="Google Pixel 3"></td>
-                                <td>5.5</td>
-                            </tr>
                         </tbody>
                         <tfoot>
                             <tr>
@@ -113,11 +89,11 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <button id="submit">Submit</button>
-                    <button id="reset">Reset</button>
-                    <button id="refresh">Refresh</button>
-                    <button>View shopping cart</button>
+                    <input type="submit" />
                 </form>
+                <button id="reset">Reset</button>
+                <button id="refresh">Refresh</button>
+                <button onclick="window.location.href = '#shopping_cart'">View shopping cart</button>
             </section>
             <section id="shopping_cart">
                 <h2>Your shopping cart</h2>
