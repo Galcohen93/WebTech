@@ -1,19 +1,3 @@
-function getColType(table, col) {
-    let val1 = table.rows[1].getElementsByTagName("td")[col].textContent.toLowerCase();
-    
-    let date = Date.parse(val1);
-    if (!isNaN(date)) {
-        return "date";
-    }
-
-    let int = parseInt(val1);
-    if (!isNaN(int)) {
-        return "number";
-    }
-    
-    return "string";
-}
-
 function getCell(row, col) {
     let content = row.getElementsByTagName("td")[col].textContent.toLowerCase();
 
@@ -35,7 +19,6 @@ function sortTable(table, col = 0) {
     rows = table.rows;
     tbody = table.getElementsByTagName("tbody")[0];
     len = tbody.children.length;
-    type = getColType(table, col);
     for (let i = 2; i <= len; i++) {
         oneval = getCell(rows[1], col);
         iminval = getCell(rows[i-1], col);
