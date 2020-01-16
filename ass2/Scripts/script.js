@@ -1,81 +1,75 @@
-
+// Wait for all elements to load
 $(document).ready(function () {
+    // Initialize tablesort library on every table
     $('table').tablesort();
 
+    // Make the reset button clickable
     $('#reset').click(resetTable);
 
-    $('#refresh').click(refreshTable);
-
+    // Put DB data into table when the page first loads.
     refreshTable();
 });
 
 function putTable() {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", refreshTable);
-    xhr.responseType = "json";
-    var brand = document.getElementsByName("brand")[0];
-    var model = document.getElementsByName("model")[0];
-    var os = document.getElementsByName("os")[0];
-    var image = document.getElementsByName("image")[0];
-    var screensize = document.getElementsByName("screensize")[0];
+    // Reference to inputs
+    var brand = $("input[name=brand]");
+    var model = $("input[name=model]");
+    var os = $("input[name=os]");
+    var image = $("input[name=image]");
+    var screensize = $("input[name=screensize]");
 
-    var queryString = "brand=" + brand.value +
-        "&model=" + model.value +
-        "&os=" + os.value +
-        "&image=" + image.value +
-        "&screensize=" + screensize.value;
-    xhr.open("POST", "https://wt.ops.labs.vu.nl/api20/412d87b0");
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-    xhr.send(queryString);
+    // Post request with input values included, callback to refreshtable
+    $.post("https://wt.ops.labs.vu.nl/api20/412d87b0",
+    {
+        brand: brand.val(),
+        model: model.val(),
+        os: os.val(),
+        image: image.val(),
+        screensize: screensize.val()
+    }, refreshTable);
 
-    brand.value = "";
-    model.value = "";
-    os.value = "";
-    image.value = "";
-    screensize.value = "";
+    // Empty the inputs
+    brand.val("");
+    model.val("");
+    os.val("");
+    image.val("");
+    screensize.val("");
 
+    // Return false so that the form won't submit itself (because we want only ajax)
     return false;
 }
 
 function resetTable() {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", refreshTable);
-    xhr.open("GET", "https://wt.ops.labs.vu.nl/api20/412d87b0/reset");
-    xhr.send();
+    // Get request to reset DB, callback to refreshtable
+    $.get("https://wt.ops.labs.vu.nl/api20/412d87b0/reset", refreshTable);
     return;
 }
 
 function refreshTable() {
-    var xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", updateTable);
-    xhr.responseType = "json";        
-    xhr.open("GET", "https://wt.ops.labs.vu.nl/api20/412d87b0");
-    xhr.send();
+    // Get request to get values in DB, callback to check response and then call filltable
+    $.get("https://wt.ops.labs.vu.nl/api20/412d87b0", function (data, status) {
+        // Select the db table
+        var topSellingItemsTable = $("#top_selling_items_table > tbody");
+        if (status === "success") {
+            fillTable(data, topSellingItemsTable);
+        } else {
+            alert(status);
+        }
+    });
     return;
 }
 
-function updateTable() {
-    var topSellingItemTable = document.getElementById("top_selling_items_table").getElementsByTagName("tbody")[0];
-    if (this.status === 200) {
-        var items = this.response;
-        fillTable(items, topSellingItemTable);
-    } else {
-      movieInfo.innerHTML = "Error";
-    }
-    return;
-}
+function fillTable(data, tbody) {
+    // Foreach member of the response, add a row with data
+    tbody.html("");
+    for (var i = 0; i < data.length; i++) {
+        var responsea = "<td>" + data[i].brand + "</td>" +
+            "<td>" + data[i].model + "</td>" +
+            "<td>" + data[i].os + "</td>" +
+            "<td>" + "<img src='" + data[i].image + "'></td>" +
+            "<td data-sort-value='" + data[i].screensize + "'>" + data[i].screensize + "</td>";
 
-function fillTable(items, tbody) {
-    tbody.innerHTML = "<tr>";
-    for (var i = 0; i < items.length; i++) {
-        var responsea = "<td>" + items[i].brand + "</td>" +
-            "<td>" + items[i].model + "</td>" +
-            "<td>" + items[i].os + "</td>" +
-            "<td>" + "<img src='" + items[i].image + "'></td>" +
-            "<td data-sort-value='" + items[i].screensize + "'>" + items[i].screensize + "</td>";
-
-        tbody.innerHTML = tbody.innerHTML + responsea;
+        tbody.html("<tr>" + tbody.html() + responsea + "</tr>")
     }
-    tbody.innerHTML = tbody.innerHTML + "</tr>";
     return;
 }
