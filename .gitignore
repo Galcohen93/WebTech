@@ -4,6 +4,9 @@
 
 .idea/
 .vs/
+ass3/node_modules/
+ass3/db.sqlite
+ass3/npm
 
 *.DS_Store
 
