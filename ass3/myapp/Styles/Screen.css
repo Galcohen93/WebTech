@@ -1,0 +1,342 @@
+﻿/* Initial document setup */
+html, body {
+    font: 16px "Roboto" ,sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    height: 3rem;
+    display: flex;
+    background: white;
+}
+header nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    border-bottom: 1px solid lightgray;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+header nav::-webkit-scrollbar {
+    display: none;
+}
+header nav a {
+    float: left;
+    vertical-align: top;
+    line-height: 3rem;
+    padding: 0 1rem;
+    height: 3rem;
+    font-weight: 600;
+    color: #333;
+    border-right: 1px solid lightgray;
+    box-sizing: border-box;
+    text-decoration: inherit;
+}
+header nav a:first-of-type {
+    padding: 0;
+    width: 250px;
+}
+header nav a img {
+    float: left;
+    height: calc(2rem - 1px);
+    padding: 0.5rem;
+}
+header nav a h1 {
+    float: left;
+    line-height: 3rem;
+    height: 3rem;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #0080c0;
+}
+
+/* Main layout */
+main {
+    height: calc(100vh - 5rem - 1px);
+}
+main::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+main > div {
+    width: calc(100% - 250px);
+    float: left;
+    height: 100%;
+    overflow-y: auto;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png");
+    background-repeat: repeat;
+}
+
+/* Sidebar */
+aside {
+    float: left;
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid lightgray;
+    box-sizing: border-box;
+    padding: 1rem;
+    overflow-y: auto;
+}
+aside h2 { margin-top: 0; }
+aside h3 { margin: 0; }
+aside p { margin-top: 0; }
+aside table { margin-bottom: 1rem; }
+
+/* Document sections/pages */
+section {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: none;
+}
+section:target,
+section#browse { display: block; }
+section:target ~ section#browse { display: none; }
+section h2 { margin: 0; }
+
+/* Product listings */
+section article {
+    float: left;
+    width: 25%;
+    border: 1px solid lightgray;
+    box-sizing: border-box;
+    padding: 1rem;
+    position: relative;
+    background-color: white;
+}
+section article h4 { margin-top: 0; }
+section article span {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+section article img { width: 100%; }
+
+.comp {
+    background-color: #39b54a;
+}
+.notComp {
+    background-color: #c44230;
+}
+/* Specific styling */
+figure {
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+figure img {
+    width: 100%;
+    max-width: 800px;
+}
+dt { font-weight: bold; }
+dd {
+    text-indent: 1rem;
+    margin-left: 0;
+}
+a { color: #0080c0; }
+a:link, a:visited { text-decoration: none; }
+a:hover, a:active { text-decoration: underline; }
+pre { font-family: "Roboto Mono", monospace; }
+
+/* Table */
+table {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    border-spacing: initial;
+    width: 100%;
+    display: table;
+    background-color: white;
+}
+table caption {
+    caption-side: top;
+    text-align: left;
+}
+table td,
+table th {
+    padding: 0.5rem;
+    text-align: left;
+    border: 1px solid lightgray;
+    /*text-transform: capitalize;*/
+}
+th.sorted.ascending:after {
+    content: "  \2191";
+}
+
+th.sorted.descending:after {
+    content: " \2193";
+}
+table thead tr {
+    background-color: #333;
+    color: white;
+}
+table tbody td img {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+/* Form inputs */
+form input {
+    outline: none;
+    border-width: 1px;
+    border-color: transparent;
+    border-style: dotted;
+    background-color: transparent;
+    color: inherit;
+    width: 100%;
+}
+form input:focus {
+    border-color: lightgray;
+}
+form input::placeholder {
+    color: inherit;
+    font-style: italic;
+}
+form input[type=submit] {
+    float: left;
+}
+
+/* General buttons + their hovers*/
+form input[type=submit],
+button {
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    line-height: 1rem;
+    box-sizing: border-box;
+    background-color: white;
+    display: inline-block;
+    width: auto;
+}
+form input[type=submit]:hover,
+button:hover,
+header nav a:not(:first-of-type):hover {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+/* Footer */
+footer {
+    box-sizing: border-box;
+    border-top: 1px solid lightgray;
+    height: 2rem;
+    line-height: 2rem;
+    position: relative;
+}
+footer small {
+    display: block;
+    text-align: center;
+    font-variant: small-caps;
+}
+footer div {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    height: 1.5rem;
+}
+footer img {
+    height: 100%;
+    display: inline-block;
+}
+
+/* Float clearfix */
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* */
+ol.list_steps { list-style: lower-roman; }
+ul.list_arrow {
+    list-style-image: url("http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/16/Actions-arrow-right-icon.png");
+    list-style-position: outside;
+    margin-left: -1rem;
+}
+
+/* Responsive queries */
+@media screen and (max-width: 860px) {
+    /* Decrease font size to fit more*/
+    html, body {
+        font-size: 15px;
+    }
+    
+    /* Put sidebar on top & thinner paddings */
+    main {
+        height: auto;
+    }
+    main > div {
+        width: 100%;
+        height: auto;
+    }
+    aside {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        padding-top: 3.5rem;
+        border-right: none;
+        border-bottom: 1px solid lightgray;
+    }
+    section {
+        padding: 0.5rem;
+        padding-top: 3.5rem;
+    }
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: inset -7px 0 9px -5px rgba(0,0,0,1);
+        z-index: 99999;
+    }
+    section article {
+        z-index: 999;
+    }
+
+    /* Make nav scrollable */
+    header nav a {
+        display: inline-block;
+        float: none;
+    }
+
+    /* 4 to 3 cols*/
+    section article {
+        width: 33.33%;
+    }
+
+    /* Remove title text*/
+    header nav a:first-of-type {
+        width: auto;
+    }
+    header nav a:first-of-type h1 {
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    /* Decrease font size to fit more*/
+    html, body {
+        font-size: 14px;
+    }
+    
+    /* 4 to 3 cols*/
+    section article {
+        width: 50%;
+    }
+    
+    footer small {
+        text-align: left;
+        margin-left: 0.5rem;
+    }
+}

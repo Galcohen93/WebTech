@@ -1,0 +1,38 @@
+﻿@media print {
+    p {
+        widows: 2;
+        orphans: 2;
+    }
+    section h1, section h2 {
+        page-break-before: always;
+    }
+    aside {
+        page-break-after: always;
+    }
+    main {
+        display: block;
+        height: auto;
+    }
+    aside {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        border-right: none;
+        border-bottom: none;
+    }
+    main > div {
+        width: 100%;
+        height: auto;
+    }
+    section {
+        padding: 0.5rem;
+        display: block;
+    }
+
+    header nav a:first-of-type {
+        width: auto;
+    }
+    header nav a:first-of-type h1 {
+        display: none;
+    }
+}
