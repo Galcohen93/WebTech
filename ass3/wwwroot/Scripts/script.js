@@ -2,11 +2,7 @@
 var apihost = "http://localhost:3000/api/"
 
 // Reference to inputs
-var brand = $("input[name=brand]");
-var model = $("input[name=model]");
-var os = $("input[name=os]");
-var image = $("input[name=image]");
-var screensize = $("input[name=screensize]");
+var brand, model, os, image, screensize;
 
 function clearInputs() {
     // Empty the inputs
@@ -19,6 +15,12 @@ function clearInputs() {
 
 // Wait for all elements to load
 $(document).ready(function () {
+    brand = $("input[name=brand]");
+    model = $("input[name=model]");
+    os = $("input[name=os]");
+    image = $("input[name=image]");
+    screensize = $("input[name=screensize]");
+    
     // Initialize tablesort library on every table
     $('table').tablesort();
 
