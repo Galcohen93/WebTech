@@ -1,0 +1,23 @@
+GET http://localhost:8080/api/reset
+
+###
+
+DELETE http://localhost:8080/api/phones?id=3
+
+###
+
+POST http://localhost:8080/api/phones
+Content-Type: application/x-www-form-urlencoded
+
+brand=apple&model=iphone&os=6&image=yes&screensize=8
+
+###
+
+GET http://localhost:8080/api/phones
+
+###
+
+GET https://wt.ops.labs.vu.nl/api20/412d87b0/reset
+
+###
+
