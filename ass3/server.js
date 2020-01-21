@@ -16,8 +16,10 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
     );
-    if (req.method == "OPTIONS") {
-        res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PATCH, DELETE")
+    if (req.method == "OPTIONS" && req.originalUrl.includes("phones")) {
+        res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PATCH")
+    } else if (req.method == "OPTIONS" && req.originalUrl.includes("reset")) {
+        res.header("Access-Control-Allow-Methods", "DELETE")
     }
     next();
 });
