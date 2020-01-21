@@ -1,4 +1,3 @@
-
 var express = require("express");
 var app = express();
 
@@ -11,16 +10,15 @@ app.use(bodyParser.json());
 var HTTP_PORT = 3000;
 
 app.use((req, res, next) => {
+    // Headers
     res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-    );
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept, Authorization");
     if (req.method === "OPTIONS" && req.originalUrl.includes("phones")) {
         res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PATCH")
     } else if (req.method === "OPTIONS" && req.originalUrl.includes("reset")) {
         res.header("Access-Control-Allow-Methods", "DELETE")
     }
+    
     next();
 });
 
@@ -29,7 +27,15 @@ app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT));
 });
 
-// GET request, get all phones
+// GET /
+// Base endpoint message
+app.get("/api", (req, res, next) => {
+    res.status(200).json({"message":"VUphone API v1"})
+});
+
+
+// GET phones (by id)
+// Retreive information on all phones or a single one
 app.get("/api/phones", (req, res, next) => {
     var sql;
     var id = req.query.id;
@@ -44,7 +50,8 @@ app.get("/api/phones", (req, res, next) => {
     });
 });
 
-// POST API request 
+// POST phones
+// Add a new phone
 app.post("/api/phones", (req, res, next) => {
     var sql = "INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)";
     var data = [req.body.brand, req.body.model, req.body.os, req.body.image, req.body.screensize]; 
@@ -66,7 +73,8 @@ app.post("/api/phones", (req, res, next) => {
 });
 
 
-// Update a spcific id
+// PATCH phones
+// Change the contents of one phone
 app.patch("/api/phones", (req, res, next) => {
     var id = req.query.id;
 
@@ -83,7 +91,8 @@ app.patch("/api/phones", (req, res, next) => {
 });
 
 
-// Delete specific id
+// DELETE phones
+// Remove a phone from the table
 app.delete("/api/phones", (req, res, next) => {
     var id = req.query.id;
 
@@ -97,7 +106,8 @@ app.delete("/api/phones", (req, res, next) => {
 });
 
 
-//reset database
+// DELETE reset
+// Empty the table and add two placeholder phones
 app.delete("/api/reset", (req, res, next) => {
     db.run("DELETE FROM phones", function (err) {
         if (err) { res.status(500).end() }
@@ -119,8 +129,4 @@ app.delete("/api/reset", (req, res, next) => {
             })
         }
     });
-});
-
-app.get("/api", (req, res, next) => {
-    res.json({"message":"VUphone API v1"})
 });
