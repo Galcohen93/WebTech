@@ -2,22 +2,22 @@ GET http://localhost:8080/api/phones
 
 ###
 
-GET http://localhost:8080/api/phones?id=1
+GET http://localhost:8080/api/phones?id=5
 
 ###
 
 POST http://localhost:8080/api/phones
 Content-Type: application/x-www-form-urlencoded
 
-brand=apple&model=iphone&os=6&image=yes&screensize=8
+brand=Apple&model=iPhone&os=6&image=yes&screensize=8
 
 ###
 
-DELETE http://localhost:8080/api/phones?id=1
+DELETE http://localhost:8080/api/phones?id=3
 
 ###
 
-PATCH http://localhost:8080/api/phones?id=1
+PATCH http://localhost:8080/api/phones?id=2
 Content-Type: application/x-www-form-urlencoded
 
 brand=apple&model=iphone&os=6&image=yes&screensize=8
