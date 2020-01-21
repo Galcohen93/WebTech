@@ -11,19 +11,15 @@ app.use(bodyParser.json());
 var HTTP_PORT = 3000
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  /*res.setHeader(
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );*/
-  if (req.originalUrl == "/api/phones") {
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH');
-  } else if (req.originalUrl == "/api/reset") {
-    res.setHeader('Access-Control-Allow-Methods', 'DELETE');
-  } else {
-      return res.status(400)
-  }
-  next();
+    );
+    if (req.method == "OPTIONS") {
+        res.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PATCH, DELETE")
+    }
+    next();
 });
 
 // Start server
@@ -33,104 +29,78 @@ app.listen(HTTP_PORT, () => {
 
 // GET request, get all phones
 app.get("/api/phones", (req, res, next) => {
-    var sql = "select * from phones"
-    var params = []
-    db.all(sql, params, (err, rows) => {
-        if (err) {
-          res.status(400).json({"error":err.message});
-          return;
-        }
-        res.json(rows)
-      });
+    var sql = "SELECT * FROM phones"
+    db.all(sql, function (err, row) {
+        if (err) { res.status(500).end(); return; }
+        else { res.status(200).json(row) }
+    });
 });
 
 // Get a specific phone from the database by id
 app.get("/api/phones/:id", (req, res, next) => {
-    var sql = "select * from phones where id = ?"
-    var params = [req.params.id]
-    db.get(sql, params, (err, row) => {
-        if (err) {
-          res.status(400).json({"error":err.message});
-          return;
-        }
-        res.json(row)
-      });
+    var sql = "SELECT * FROM phones WHERE id = ?"
+    var data = [req.params.id]
+    db.get(sql, data, function (err, row) {
+        if (err) { res.status(500).end(); return; }
+        else { res.status(200).json(row) }
+    });
 });
 
 // POST API request 
 app.post("/api/phones/", (req, res, next) => {
-    var data = {
-        brand: req.body.brand,
-        model: req.body.model,
-        os: req.body.os,
-        image: req.body.image,
-        screensize: req.body.screensize
-    }
-    var sql ='INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)'
-    var params = [data.brand, data.model, data.os, data.image, data.screensize]
-    db.run(sql, params, function (err, result) {
-        if (err){
-            res.status(400).json({"error": err.message})
-            return;
-        }
-        res.json(data)
+    var sql = "INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)"
+    var data = [req.body.brand, req.body.model, req.body.os, req.body.image, req.body.screensize]
+    db.all(sql, data, function (err) {
+        if (err) { res.status(500).end(); return; }
+        else { res.status(201).json(data) }
     });
 })
 
 
 // Update a spcific id
 app.patch("/api/phones/:id", (req, res, next) => {
-    var data = {
-        brand: req.body.brand,
-        model: req.body.model,
-        os: req.body.os,
-        image: req.body.image,
-        screensize: req.body.screensize,
-        id: req.params.id
-    }
-    var sql = `UPDATE phones set brand = COALESCE(?,brand),model = COALESCE(?,model),os = COALESCE(?,os),image = COALESCE(?,image),screensize = COALESCE(?,screensize) WHERE id = ?`
-    var params = [data.brand, data.model,data.os,data.image,data.screensize, data.id]
-    db.run(sql,params, function (err, result) {
-            if (err){
-                res.status(400).json({"error": res.message})
-                return;
-            }
-            res.json(data)
+    var sql = "UPDATE phones set brand = COALESCE(?,brand),model = COALESCE(?,model),os = COALESCE(?,os),image = COALESCE(?,image),screensize = COALESCE(?,screensize) WHERE id = ?"
+
+    var data = [req.body.brand, req.body.model, req.body.os, req.body.image, req.body.screensize, req.params.id]
+    db.run(sql, data, function (err) {
+        if (err) { res.status(500).end(); return; }
+        else { res.status(200).json(data) }
     });
 })
 
 
 // Delete specific id
 app.delete("/api/phones/:id", (req, res, next) => {
-    db.run(
-        'DELETE FROM phones WHERE id = ?',
-        req.params.id,
-        function (err, result) {
-            if (err){
-                res.status(400).json({"error": res.message})
-                return;
-            }
-            res.json(data)
+    db.run("DELETE FROM phones WHERE id = ?", req.params.id, function (err) {
+        if (err) { res.status(500).end(); return; }
+        else { res.status(200).end(); }
     });
 })
 
 
 //reset database
-app.delete("/api/reset/", (req, res, next) => {
-    db.run(
-        'DELETE FROM phones WHERE id > 0',
-        req.params.id,
-        function (err, result) {
-            if (err){
-                res.status(400).json({"error": res.message})
-                return;
-            }
-            res.status(200)
-            var insert = 'INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)'
-            db.run(insert, ["Apple","iPhone X","iOS","https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png","5"])
-            db.run(insert, ["Samsung","Galaxy s8","Android","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png","6"])  
+app.delete("/api/reset", (req, res, next) => {
+    db.run("DELETE FROM phones", function (err) {
+        if (err) { res.status(500).end(); return; }
+        else {
+            var sql = "INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)";
 
-        });
+            data = ["Apple", "iPhone X", "iOS", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png", "5"];
+            db.run(sql, data, function (err) {
+                if (err) { res.status(500).end(); }
+                else {
+                    data = ["Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png", "6"];
+                    db.run(sql, data, function (err) {
+                        if (err) { res.status(500).end(); return; }
+                        else {
+                            res.status(200);
+                            res.end();
+                        }
+                    });
+                }
+            })
+        }
+    });
 })
 
 app.get("/api", (req, res, next) => {
