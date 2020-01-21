@@ -12,13 +12,16 @@ var HTTP_PORT = 3000
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header(
+  /*res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  if (req.method === 'OPTIONS') {
-      res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
-      return res.status(200).json({});
+  );*/
+  if (req.originalUrl == "/api/phones") {
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH');
+  } else if (req.originalUrl == "/api/reset") {
+    res.setHeader('Access-Control-Allow-Methods', 'DELETE');
+  } else {
+      return res.status(400)
   }
   next();
 });
@@ -28,7 +31,7 @@ app.listen(HTTP_PORT, () => {
     console.log("Server running on port %PORT%".replace("%PORT%",HTTP_PORT))
 });
 
-
+// GET request, get all phones
 app.get("/api/phones", (req, res, next) => {
     var sql = "select * from phones"
     var params = []
@@ -41,8 +44,8 @@ app.get("/api/phones", (req, res, next) => {
       });
 });
 
-// Get a specific phone from the database
-app.get("/api/phone/:id", (req, res, next) => {
+// Get a specific phone from the database by id
+app.get("/api/phones/:id", (req, res, next) => {
     var sql = "select * from phones where id = ?"
     var params = [req.params.id]
     db.get(sql, params, (err, row) => {
@@ -55,7 +58,7 @@ app.get("/api/phone/:id", (req, res, next) => {
 });
 
 // POST API request 
-app.post("/api/phone/", (req, res, next) => {
+app.post("/api/phones/", (req, res, next) => {
     var data = {
         brand: req.body.brand,
         model: req.body.model,
@@ -70,17 +73,13 @@ app.post("/api/phone/", (req, res, next) => {
             res.status(400).json({"error": err.message})
             return;
         }
-        res.json({
-            "message": "success",
-            "data": data,
-            "id" : this.lastID
-        })
+        res.json(data)
     });
 })
 
 
 // Update a spcific id
-app.patch("/api/phone/:id", (req, res, next) => {
+app.patch("/api/phones/:id", (req, res, next) => {
     var data = {
         brand: req.body.brand,
         model: req.body.model,
@@ -96,17 +95,13 @@ app.patch("/api/phone/:id", (req, res, next) => {
                 res.status(400).json({"error": res.message})
                 return;
             }
-            res.json({
-                message: "success",
-                data: data,
-                changes: this.changes
-            })
+            res.json(data)
     });
 })
 
 
 // Delete specific id
-app.delete("/api/phone/:id", (req, res, next) => {
+app.delete("/api/phones/:id", (req, res, next) => {
     db.run(
         'DELETE FROM phones WHERE id = ?',
         req.params.id,
@@ -115,7 +110,7 @@ app.delete("/api/phone/:id", (req, res, next) => {
                 res.status(400).json({"error": res.message})
                 return;
             }
-            res.json({"message":"deleted", rows: this.changes})
+            res.json(data)
     });
 })
 
@@ -130,16 +125,14 @@ app.delete("/api/reset/", (req, res, next) => {
                 res.status(400).json({"error": res.message})
                 return;
             }
-            res.json({"message":"deleted", rows: this.changes}) 
-
+            res.status(200)
             var insert = 'INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)'
             db.run(insert, ["Apple","iPhone X","iOS","https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png","5"])
             db.run(insert, ["Samsung","Galaxy s8","Android","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png","6"])  
-    });
+
+        });
 })
 
-
-// Root path
-app.get("/", (req, res, next) => {
+app.get("/api", (req, res, next) => {
     res.json({"message":"VUphone API"})
 });

@@ -26,7 +26,7 @@ function putTable() {
         "&os=" + os.value +
         "&image=" + image.value +
         "&screensize=" + screensize.value;
-    xhr.open("POST", "http://localhost:3000/api/phone");
+    xhr.open("POST", "http://localhost:3000/api/phones");
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.send(queryString);
 
@@ -56,7 +56,7 @@ function updateItem(id) {
         "&os=" + os.value +
         "&image=" + image.value +
         "&screensize=" + screensize.value;
-    xhr.open("PATCH", "http://localhost:3000/api/phone/" + id);
+    xhr.open("PATCH", "http://localhost:3000/api/phones/" + id);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhr.send(queryString);
 
@@ -80,16 +80,16 @@ function resetTable() {
 function removeItem(id) {
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("load", refreshTable);
-    xhr.open("DELETE", "http://localhost:3000/api/phone/" + id);
+    xhr.open("DELETE", "http://localhost:3000/api/phones/" + id);
     xhr.send();
-    return;
+    return false;
 }
 
 function refreshTable() {
     var xhr = new XMLHttpRequest();
     xhr.addEventListener("load", updateTable);
     xhr.responseType = "json";        
-    xhr.open("GET", "http://localhost:3000/api/Phones");
+    xhr.open("GET", "http://localhost:3000/api/phones");
     xhr.send();
     return;
 }
