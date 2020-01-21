@@ -1,8 +1,8 @@
-GET http://localhost:8080/api/reset
+GET http://localhost:8080/api/phones
 
 ###
 
-DELETE http://localhost:8080/api/phones?id=3
+GET http://localhost:8080/api/phones?id=1
 
 ###
 
@@ -13,11 +13,19 @@ brand=apple&model=iphone&os=6&image=yes&screensize=8
 
 ###
 
-GET http://localhost:8080/api/phones
+DELETE http://localhost:8080/api/phones?id=1
 
 ###
 
-GET https://wt.ops.labs.vu.nl/api20/412d87b0/reset
+PATCH http://localhost:8080/api/phones?id=1
+Content-Type: application/x-www-form-urlencoded
+
+brand=apple&model=iphone&os=6&image=yes&screensize=8
 
 ###
+
+DELETE http://localhost:8080/api/reset
+
+###
+
 

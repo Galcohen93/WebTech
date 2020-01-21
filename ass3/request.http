@@ -1,0 +1,30 @@
+GET http://localhost:3001/api/phones
+
+###
+GET http://localhost:3001/api/phones/6
+
+###
+
+POST http://localhost:3001/api/phones
+Content-Type: application/x-www-form-urlencoded
+
+brand=apple&model=iphone&os=6&image=yes&screensize=8
+
+###
+
+DELETE http://localhost:3001/api/phones/1
+
+###
+
+PATCH http://localhost:3001/api/phones/1
+Content-Type: application/x-www-form-urlencoded
+
+brand=apple&model=iphone&os=6&image=yes&screensize=8
+
+###
+
+DELETE http://localhost:3001/api/reset
+
+###
+
+
