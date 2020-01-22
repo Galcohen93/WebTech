@@ -108,7 +108,7 @@ function updateItem(id) {
 function removeItem(id) {
     // Delete request with input values included, callback to refreshtable
     $.ajax({
-        url: apihost + "phones?id"+id,
+        url: apihost + "phones?id="+id,
         type: 'DELETE',
         success: refreshTable
     });
