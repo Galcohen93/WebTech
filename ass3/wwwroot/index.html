@@ -187,21 +187,22 @@
                     <ul>
                         <li>
                         <p class="Secondtitle">Request Method:</p>
-                        <p><em>GET</em></p>
+                        <ul><p><em>GET</em></p></ul>
                         </li>
 
                         <li>
                         <p class="Secondtitle">Request endpoint:</p>
-                        <em>/api/Phones/</em>
+                        <ul><em>/api/Phones/</em></ul>
                         </li>
 
                         <li>
                         <p class="Secondtitle">Data Params:</p>
-                        <p><em>No parameters needed for this function</em></p>
+                        <ul><p><em>No parameters needed for this function</em></p></ul>
                         </li>
 
                         <li>
                         <p class="Secondtitle">Response Header:</p>
+                        <ul>
                         <ul class="list_arrow">
                             <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
                             <li><p>Access-Control-Allow-Origin: *</p></li>
@@ -212,40 +213,41 @@
                             <li><p>X-Powered-By: Express</p></li>
                             </li>
                         </ul>
+                    </ul>
 
                         <li>
-                        <p class="Secondtitle">Response Body:</p>
-                        <p><em>No Response Body for GET request</em></p>
-                        </li>
-
+                                <p class="Secondtitle">Response 200:</p>
+                                <ul>
+                                <p><strong>Code:</strong> 200 OK<br></p>
+                                    <p class="Secondtitle">Response Body:</p>                                
+                                    <table>
+                                        <th>[{
+                                            <span class="tab1"><br>
+                                                "id": int,<br>
+                                                "brand": "string",<br>
+                                                "model": "string",<br>
+                                                "os": "string",<br>
+                                                "image": "string",<br>
+                                                "screensize": int<br>
+                                            },<br>
+                                            {<br>
+                                                "id": int,<br>
+                                                "brand": "string",<br>
+                                                "model": "string",<br>
+                                                "os": "string",<br>
+                                                "image": "string",<br>
+                                                "screensize": int<br></span>
+                                            }]<br>    
+                                        </th>
+                                    </table>
+                                </ul>
+                                </li>
                         <li>
-                        <p class="Secondtitle">Response 200:</p>
-                        <p><strong>Code:</strong> 200 OK<br></p>
-                        <table>
-                            <th>[{
-                                <span class="tab1"><br>
-                                    "id": int,<br>
-                                    "brand": "string",<br>
-                                    "model": "string",<br>
-                                    "os": "string",<br>
-                                    "image": "string",<br>
-                                    "screensize": int<br>
-                                },<br>
-                                {<br>
-                                    "id": int,<br>
-                                    "brand": "string",<br>
-                                    "model": "string",<br>
-                                    "os": "string",<br>
-                                    "image": "string",<br>
-                                    "screensize": int<br></span>
-                                }]<br>    
-                            </th>
-                        </table>
-                        </li>
-                        <li>
-                        <p class="Secondtitle">Response 400:</p>
+                        <p class="Secondtitle">Response 404:</p>
+                        <ul><p><em>No response body</em></p></ul>
                         <li>
                         <p class="Secondtitle">Response 500:</p>
+                        <ul><p><em>No response body</em></p></ul>
                         </li>
                     </ul>
 
@@ -253,387 +255,296 @@
 
 
 
+                <details>
+                    <summary>Gel phone by id</summary>
+                    <ul>
+                        <li>
+                        <p class="Secondtitle">Request Method:</p>
+                        <ul><p><em>GET</em></p></ul>
+                        </li>
+
+                        <li>
+                        <p class="Secondtitle">Request endpoint:</p>
+                        <ul><em>/api/Phones?id= (id)</em></ul>
+                        </li>
+
+                        <li>
+                        <p class="Secondtitle">Data Params:</p>
+                        <ul><p><em>id = int</em></p></ul>
+                        </li>
+
+                        <li>
+                        <p class="Secondtitle">Response Header:</p>
+                        <ul>
+                        <ul class="list_arrow">
+                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                            <li><p>Access-Control-Allow-Origin: *</p></li>
+                            <li><p>Content-Length: 205</p></li>
+                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                            <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                            <li><p>X-Powered-By: Express</p></li>
+                            </li>
+                        </ul>
+                    </ul>
+
+                    <li>
+                    <p class="Secondtitle">Response 200:</p>
+                    <ul>
+                        <p><strong>Code:</strong> 200 OK<br></p>
+                        <p class="Secondtitle">Response Body:</p>                                
+                        <table>
+                            <th>{
+                                <span class="tab1"><br>
+                                    "id": int,<br>
+                                    "brand": "string",<br>
+                                    "model": "string",<br>
+                                    "os": "string",<br>
+                                    "image": "string",<br>
+                                    "screensize": int<br>
+                                }<br>   
+                            </th>
+                        </table>
+                    </ul>
+                    </li>
+                    <li>
+                    <p class="Secondtitle">Response 404:</p>
+                    <ul><p><em>No response body</em></p></ul>
+                    <li>
+                    <p class="Secondtitle">Response 500:</p>
+                    <ul><p><em>No response body</em></p></ul>
+                    </li>
+                    </ul>
+
+                    </details>
+    
 
                 <details>
-                        <summary>Gel phone by id</summary>
+                    <summary>Add a new phone</summary>
+                    <ul>
+                        <li>
+                        <p class="Secondtitle">Request Method:</p>
+                        <ul><p><em>POST</em></p></ul>
+                        </li>
+
+                        <li>
+                        <p class="Secondtitle">Request endpoint:</p>
+                        <ul><em>/api/Phones</em></ul>
+                        </li>
+                        <table>
+                            <th>
+                                <li>
+                                <p class="Secondtitle">Data Params:</p>
+                                <ul>
+                                    <p><em>/api/Phones?brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
+                                </ul>
+                                </li>
+                            </th>
+                        </table>
+                        <li>
+                        <p class="Secondtitle">Response Header:</p>
+                        <ul>
+                        <ul class="list_arrow">
+                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                            <li><p>Access-Control-Allow-Origin: *</p></li>
+                            <li><p>Content-Length: 205</p></li>
+                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                            <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
+                            <li><p>X-Powered-By: Express</p></li>
+                            <li><p>Connection: keep-alive</p></li>
+                            </li>
+                        </ul>
+                    </ul>
+
+                    <li>
+                        <p class="Secondtitle">Response 201:</p>
+                        <ul>
+                        <p><strong>Code:</strong> 201 OK<br></p>
+                        <p class="Secondtitle">Response Body:</p>                                
+                        <table>
+                            <th>{
+                                <span class="tab1"><br>
+                                    "id": int,<br>
+                                    "brand": "string",<br>
+                                    "model": "string",<br>
+                                    "os": "string",<br>
+                                    "image": "string",<br>
+                                    "screensize": int<br>
+                                }<br>   
+                            </th>
+                        </table>
+                        </ul>
+                        </li>
+                        <li>
+                        <p class="Secondtitle">Response 400:</p>
+                        <ul><p><em>No response body</em></p></ul>
+                        <li>
+                        <p class="Secondtitle">Response 500:</p>
+                        <ul><p><em>No response body</em></p></ul>
+                        </li>
+                    </ul>
+
+                </details>
+                
+
+
+                <details>
+                    <summary>Update phone</summary>
+                    <ul>
+                        <li>
+                        <p class="Secondtitle">Request Method:</p>
+                        <ul><p><em>PATCH</em></p></ul>
+                        </li>
+
+                        <li>
+                        <p class="Secondtitle">Request endpoint:</p>
+                        <ul><em>/api/Phones</em></ul>
+                        </li>
+                        <table>
+                            <th>
+                                <li>
+                                <p class="Secondtitle">Data Params:</p>
+                                <ul>
+                                    <p><em>/api/Phones?id=int&brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
+                                </ul>
+                                </li>
+                            </th>
+                        </table>
+                        <li>
+                        <p class="Secondtitle">Response Header:</p>
+                        <ul>
+                        <ul class="list_arrow">
+                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                            <li><p>Access-Control-Allow-Origin: *</p></li>
+                            <li><p>Content-Length: 205</p></li>
+                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                            <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
+                            <li><p>X-Powered-By: Express</p></li>
+                            <li><p>Connection: keep-alive</p></li>
+                            </li>
+                        </ul>
+                    </ul>
+
+                        <li>
+                        <p class="Secondtitle">Response 204:</p>
+                        <ul>
+                        <p><strong>Code:</strong> 204 OK<br></p>
+                                                            
+                            <p><em>No response body</em></p>
+                        </ul>
+                        </li>
+                        <li>
+                        <p class="Secondtitle">Response 400:</p>
+                        <ul><p><em>No response body</em></p></ul>
+                        <li>
+                        <p class="Secondtitle">Response 500:</p>
+                        <ul><p><em>No response body</em></p></ul>
+                        </li>
+                    </ul>
+
+                </details>
+                    
+                    <details>
+                        <summary>Delete phone by id</summary>
                         <ul>
                             <li>
                             <p class="Secondtitle">Request Method:</p>
-                            <p><em>GET</em></p>
+                            <ul><p><em>DELETE</em></p></ul>
                             </li>
     
                             <li>
                             <p class="Secondtitle">Request endpoint:</p>
-                            <em>/api/Phones?id= (id)</em>
+                            <ul><em>/api/Phones?id= (id)</em></ul>
                             </li>
     
                             <li>
                             <p class="Secondtitle">Data Params:</p>
-                            <p><em>id = int</em></p>
+                            <ul><p><em>id = int</em></p></ul>
                             </li>
     
                             <li>
                             <p class="Secondtitle">Response Header:</p>
+                            <ul>
                             <ul class="list_arrow">
                                 <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
                                 <li><p>Access-Control-Allow-Origin: *</p></li>
-                                <li><p>Content-Length: 410</p></li>
+                                <li><p>Content-Length: 205</p></li>
                                 <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                               <li><p>Date: Tue, 21 Jan 2020 12:47:13 GMT</p></li>
+                                <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
                                 <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
                                 <li><p>X-Powered-By: Express</p></li>
                                 </li>
                             </ul>
+                        </ul>
     
                             <li>
-                            <p class="Secondtitle">Response 200:</p>
-                            <p><strong>Code:</strong> 200 OK<br></p>
-                            <li>
-                                    <p class="Secondtitle">Response Body:</p>
-                                    <p><em>No Response Body for GET request</em></p>
-                                    </li>
-                            <table>
-                                <th>[{
-                                    <span class="tab1"><br>
-                                        "id": int,<br>
-                                        "brand": "string",<br>
-                                        "model": "string",<br>
-                                        "os": "string",<br>
-                                        "image": "string",<br>
-                                        "screensize": int<br>
-                                    },<br>
-                                    {<br>
-                                        "id": int,<br>
-                                        "brand": "string",<br>
-                                        "model": "string",<br>
-                                        "os": "string",<br>
-                                        "image": "string",<br>
-                                        "screensize": int<br></span>
-                                    }]<br>    
-                                </th>
-                            </table>
+                            <p class="Secondtitle">Response 204:</p>
+                            <ul>
+                            <p><strong>Code:</strong> 204 OK<br></p>
+                                                                
+                                <p><em>No response body</em></p>
+                            </ul>
                             </li>
                             <li>
-                            <p class="Secondtitle">Response 404:</p>
+                            <p class="Secondtitle">Response 400:</p>
+                            <ul><p><em>No response body</em></p></ul>
                             <li>
                             <p class="Secondtitle">Response 500:</p>
+                            <ul><p><em>No response body</em></p></ul>
                             </li>
                         </ul>
     
                     </details>
-         
 
-                    <details>
-                            <summary>Add a new phone</summary>
+
+                        <details>
+                            <summary>Reset database</summary>
                             <ul>
                                 <li>
-                                <p><strong>Request Method</strong></p>
-                                <p><em><code>POST</code></em></p>
+                                <p class="Secondtitle">Request Method:</p>
+                                <ul><p><em>DELETE</em></p></ul>
                                 </li>
         
                                 <li>
-                                <p><strong>Request URL</strong></p>
-                                <p><em>http://localhost:3000/api/Phones</em></p>
+                                <p class="Secondtitle">Request endpoint:</p>
+                                <ul><em>/api/Phones</em></ul>
                                 </li>
         
                                 <li>
-                                <p><strong>Data Params</strong></p>
-                                <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
+                                <p class="Secondtitle">Data Params:</p>
+                                <ul><p><em>No parameters</em></p></ul>
                                 </li>
         
                                 <li>
-                                <p><strong>Response Header</strong></p>
-                                <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                </li>
-        
-                                <li>
-                                <p><strong>Response Body</strong></p>
-                                <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                </li>
-        
-                                <li>
-                                <p><strong>Response 200</strong></p>
-                                <p>&lt;<em>What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!</em>&gt;</p>
+                                <p class="Secondtitle">Response Header:</p>
                                 <ul>
-                                <li><strong>Code:</strong> 200 <br>
-                                <strong>Content:</strong> <code>{ * }</code></li>
-                                <table>
-                                    <td>
-                                        <th>
-                                            <p>[{<br>
-                                                "id": 65,<br>
-                                                "brand": "Apple",<br>
-                                                "model": "iPhone X",<br>
-                                                "os": "iOS",<br>
-                                                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png",<br>
-                                                "screensize": 5<br>
-                                            },<br>
-                                            {<br>
-                                                "id": 66,<br>
-                                                "brand": "Samsung",<br>
-                                                "model": "Galaxy s8",<br>
-                                                "os": "Android",<br>
-                                                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png",<br>
-                                                "screensize": 6<br>
-                                            }]<br>
-                                    </p>    
-                                    </th>
-                                    </td>
-                                </table>
+                                <ul class="list_arrow">
+                                    <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                                    <li><p>Access-Control-Allow-Origin: *</p></li>
+                                    <li><p>Content-Length: 205</p></li>
+                                    <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                                    <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                                    <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                                    <li><p>X-Powered-By: Express</p></li>
+                                    </li>
+                                </ul>
+                            </ul>
+                                <li>
+                                <p class="Secondtitle">Response 204:</p>
+                                <ul>
+                                <p><strong>Code:</strong> 204 OK<br></p>
+                                                                
+                                    <p><em>No response body</em></p>
                                 </ul>
                                 </li>
-                                <li>
-                                <p><strong>Response 400:</strong></p>
-                                <p>&lt;<em>Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be.</em>&gt;</p>
-                                <ul>
-                                <li><strong>Code:</strong> 401 UNAUTHORIZED <br>
-                                <strong>Content:</strong> <code>{ error : "Log in" }</code></li>
-                                </ul>
-                                <li>
-                                <p><strong>Response 500:</strong></p>
-                                </li>
-                                <li>
-                                <p><strong>Notes:</strong></p>
+                                <p class="Secondtitle">Response 500:</p>
+                                <ul><p><em>No response body</em></p></ul>
                                 </li>
                             </ul>
         
                         </details>
- 
-                        
-
-
-
-                        <details>
-                                <summary>Update phone</summary>
-                                <ul>
-                                    <li>
-                                    <p><strong>Request Method</strong></p>
-                                    <p><code>PATCH</code></p>
-                                    </li>
-            
-                                    <li>
-                                    <p><strong>Request URL</strong></p>
-                                    <p><em>http://localhost:3000/api/Phones</em></p>
-                                    </li>
-            
-                                    <li>
-                                    <p><strong>Data Params</strong></p>
-                                    <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                    </li>
-            
-                                    <li>
-                                    <p><strong>Response Header</strong></p>
-                                    <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                    </li>
-            
-                                    <li>
-                                    <p><strong>Response Body</strong></p>
-                                    <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                    </li>
-            
-                                    <li>
-                                    <p><strong>Response 200</strong></p>
-                                    <p>&lt;<em>What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!</em>&gt;</p>
-                                    <ul>
-                                    <li><strong>Code:</strong> 200 <br>
-                                    <strong>Content:</strong> <code>{ * }</code></li>
-                                    <table>
-                                        <td>
-                                            <th>
-                                                <p>[{<br>
-                                                    "id": 65,<br>
-                                                    "brand": "Apple",<br>
-                                                    "model": "iPhone X",<br>
-                                                    "os": "iOS",<br>
-                                                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png",<br>
-                                                    "screensize": 5<br>
-                                                },<br>
-                                                {<br>
-                                                    "id": 66,<br>
-                                                    "brand": "Samsung",<br>
-                                                    "model": "Galaxy s8",<br>
-                                                    "os": "Android",<br>
-                                                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png",<br>
-                                                    "screensize": 6<br>
-                                                }]<br>
-                                        </p>    
-                                        </th>
-                                        </td>
-                                    </table>
-                                    </ul>
-                                    </li>
-                                    <li>
-                                    <p><strong>Response 400:</strong></p>
-                                    <p>&lt;<em>Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be.</em>&gt;</p>
-                                    <ul>
-                                    <li><strong>Code:</strong> 401 UNAUTHORIZED <br>
-                                    <strong>Content:</strong> <code>{ error : "Log in" }</code></li>
-                                    </ul>
-                                    <li>
-                                    <p><strong>Response 500:</strong></p>
-                                    </li>
-                                    <li>
-                                    <p><strong>Notes:</strong></p>
-                                    </li>
-                                </ul>
-            
-                            </details>
- 
-                            
-
-
-                            <details>
-                                    <summary>Delete phone by id</summary>
-                                    <ul>
-                                        <li>
-                                        <p><strong>Request Method</strong></p>
-                                        <p><em><code>DELETE</code></em></p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Request URL</strong></p>
-                                        <p><em>http://localhost:3000/api/Phones/</em></p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Data Params</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response Header</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response Body</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response 200</strong></p>
-                                        <p>&lt;<em>What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!</em>&gt;</p>
-                                        <ul>
-                                        <li><strong>Code:</strong> 200 <br>
-                                        <strong>Content:</strong> <code>{ * }</code></li>
-                                        <table>
-                                            <td>
-                                                <th>
-                                                    <p>[{<br>
-                                                        "id": 65,<br>
-                                                        "brand": "Apple",<br>
-                                                        "model": "iPhone X",<br>
-                                                        "os": "iOS",<br>
-                                                        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png",<br>
-                                                        "screensize": 5<br>
-                                                    },<br>
-                                                    {<br>
-                                                        "id": 66,<br>
-                                                        "brand": "Samsung",<br>
-                                                        "model": "Galaxy s8",<br>
-                                                        "os": "Android",<br>
-                                                        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png",<br>
-                                                        "screensize": 6<br>
-                                                    }]<br>
-                                            </p>    
-                                            </th>
-                                            </td>
-                                        </table>
-                                        </ul>
-                                        </li>
-                                        <li>
-                                        <p><strong>Response 400:</strong></p>
-                                        <p>&lt;<em>Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be.</em>&gt;</p>
-                                        <ul>
-                                        <li><strong>Code:</strong> 401 UNAUTHORIZED <br>
-                                        <strong>Content:</strong> <code>{ error : "Log in" }</code></li>
-                                        </ul>
-                                        <li>
-                                        <p><strong>Response 500:</strong></p>
-                                        </li>
-                                        <li>
-                                        <p><strong>Notes:</strong></p>
-                                        </li>
-                                    </ul>
-                
-                            </details>
-                 
-
-                            <details>
-                                    <summary>Reset Database</summary>
-                                    <ul>
-                                        <li>
-                                        <p><strong>Request Method</strong></p>
-                                        <p><em><code>DELETE</code></em></p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Request URL</strong></p>
-                                        <p><em>http://localhost:3000/api/reset</em></p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Data Params</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response Header</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response Body</strong></p>
-                                        <p>&lt;<em>No parameters needed for this function</em>&gt;</p>
-                                        </li>
-                
-                                        <li>
-                                        <p><strong>Response 200</strong></p>
-                                        <p>&lt;<em>What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!</em>&gt;</p>
-                                        <ul>
-                                        <li><strong>Code:</strong> 200 <br>
-                                        <strong>Content:</strong> <code>{ * }</code></li>
-                                        <table>
-                                            <td>
-                                                <th>
-                                                    <p>[{<br>
-                                                        "id": 65,<br>
-                                                        "brand": "Apple",<br>
-                                                        "model": "iPhone X",<br>
-                                                        "os": "iOS",<br>
-                                                        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png",<br>
-                                                        "screensize": 5<br>
-                                                    },<br>
-                                                    {<br>
-                                                        "id": 66,<br>
-                                                        "brand": "Samsung",<br>
-                                                        "model": "Galaxy s8",<br>
-                                                        "os": "Android",<br>
-                                                        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png",<br>
-                                                        "screensize": 6<br>
-                                                    }]<br>
-                                            </p>    
-                                            </th>
-                                            </td>
-                                        </table>
-                                        </ul>
-                                        </li>
-                                        <li>
-                                        <p><strong>Response 400:</strong></p>
-                                        <p>&lt;<em>Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be.</em>&gt;</p>
-                                        <ul>
-                                        <li><strong>Code:</strong> 401 UNAUTHORIZED <br>
-                                        <strong>Content:</strong> <code>{ error : "Log in" }</code></li>
-                                        </ul>
-                                        <li>
-                                        <p><strong>Response 500:</strong></p>
-                                        </li>
-                                        <li>
-                                        <p><strong>Notes:</strong></p>
-                                        </li>
-                                    </ul>
-                
-                                </details>
                      
             </section>
 
