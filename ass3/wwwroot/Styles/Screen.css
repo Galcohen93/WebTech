@@ -120,6 +120,14 @@ section article span {
 }
 section article img { width: 100%; }
 
+section#api h5 {
+    font-size: 16px;
+}
+section#api pre {
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
 .comp {
     background-color: #39b54a;
 }

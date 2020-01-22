@@ -186,7 +186,7 @@
                     <h4>Request endpoint:</h4>
                     <p><em>/api/Phones/</em></p>
 
-                    <h4>Data Params:</h4>
+                    <h4>Request parameters:</h4>
                     <p><em>No parameters needed for this function</em></p>
 
                     <h4>Response Header:</h4>
@@ -203,28 +203,27 @@
                     <h4>Response 200:</h4>
                     <p><strong>Code:</strong> 200 OK<br></p>
                     
-                    <h5>Response Body:</h5>                                
-                    <table>
-                        <th>[{
-                            <span class="tab1"><br>
-                                "id": int,<br>
-                                "brand": "string",<br>
-                                "model": "string",<br>
-                                "os": "string",<br>
-                                "image": "string",<br>
-                                "screensize": int<br>
-                            },<br>
-                            {<br>
-                                "id": int,<br>
-                                "brand": "string",<br>
-                                "model": "string",<br>
-                                "os": "string",<br>
-                                "image": "string",<br>
-                                "screensize": int<br></span>
-                            }]<br>    
-                        </th>
-                    </table>
-                    
+                    <h5>Response Body:</h5>
+                    <p><strong>Content-type:</strong> application/json</p>
+                    <pre>
+[	
+    {
+        "id": string,
+        "brand": string,
+        "model": string,
+        "os": string,
+        "image": string,
+        "screensize": int
+    },	
+    {
+        "id": string,
+        "brand": string,
+        "model": string,
+        "os": string,
+        "image": string,
+        "screensize": int
+    }
+]</pre>
                     <h4>Response 404:</h4>
                     <p><em>No response body</em></p>
                     
@@ -253,19 +252,19 @@
 
                     <h4>Response 200:</h4>
                     <p><strong>Code:</strong> 200 OK<br></p>
-                    <h5>Response Body:</h5>                                
-                    <table>
-                        <th>{
-                            <span class="tab1"><br>
-                                "id": int,<br>
-                                "brand": "string",<br>
-                                "model": "string",<br>
-                                "os": "string",<br>
-                                "image": "string",<br>
-                                "screensize": int<br>
-                            }<br>   
-                        </th>
-                    </table>
+                    <h5>Response Body:</h5>
+                    <p><strong>Content-type:</strong> application/json</p>
+                    <pre>
+[	
+    {
+        "id": string,
+        "brand": string,
+        "model": string,
+        "os": string,
+        "image": string,
+        "screensize": int
+    }
+]</pre>
                     
                     <h4>Response 404:</h4>
                     <p><em>No response body</em></p>
@@ -305,18 +304,17 @@
                     <p><strong>Code:</strong> 201 OK<br></p>
                     
                     <h5>Response Body:</h5>
-                    <table>
-                        <th>{
-                            <span class="tab1"><br>
-                                "id": int,<br>
-                                "brand": "string",<br>
-                                "model": "string",<br>
-                                "os": "string",<br>
-                                "image": "string",<br>
-                                "screensize": int<br>
-                            }<br>   
-                        </th>
-                    </table>
+                    <p><strong>Content-type:</strong> application/json</p>
+                    <pre>
+[	
+    {
+        "brand": string,
+        "model": string,
+        "os": string,
+        "image": string,
+        "screensize": int
+    }
+]</pre>
                     
                     <h4>Response 400:</h4>
                     <p><em>No response body</em></p>
