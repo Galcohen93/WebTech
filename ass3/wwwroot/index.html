@@ -200,9 +200,7 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
                     
-                    <h4>Response 200:</h4>
-                    <p><strong>Code:</strong> 200 OK<br></p>
-                    
+                    <h4>Response 200: OK</h4>                    
                     <h5>Response Body:</h5>
                     <p><strong>Content-type:</strong> application/json</p>
                     <pre>
@@ -224,10 +222,10 @@
         "screensize": int
     }
 ]</pre>
-                    <h4>Response 404:</h4>
+                    <h4>Response 404: Not Found</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500:</h4>
+                    <h4>Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
@@ -250,8 +248,7 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
 
-                    <h4>Response 200:</h4>
-                    <p><strong>Code:</strong> 200 OK<br></p>
+                    <h4>Response 200: OK</h4>
                     <h5>Response Body:</h5>
                     <p><strong>Content-type:</strong> application/json</p>
                     <pre>
@@ -266,10 +263,10 @@
     }
 ]</pre>
                     
-                    <h4>Response 404:</h4>
+                    <h4>Response 404: Not Found</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500:</h4>
+                    <h4>Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
@@ -300,9 +297,7 @@
                         </li>
                     </ul>
 
-                    <h4>Response 201:</h4>
-                    <p><strong>Code:</strong> 201 OK<br></p>
-                    
+                    <h4>Response 201: Created</h4>                    
                     <h5>Response Body:</h5>
                     <p><strong>Content-type:</strong> application/json</p>
                     <pre>
@@ -316,10 +311,10 @@
     }
 ]</pre>
                     
-                    <h4>Response 400:</h4>
+                    <h4>Response 400: Bad Request</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500:</h4>
+                    <h4>Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
 
                 </details>
@@ -352,45 +347,42 @@
                         <li><p>Connection: keep-alive</p></li>
                     </ul>
 
-                    <h4>Response 204:</h4>
-                    <p><strong>Code:</strong> 204 OK<br></p>
-                                                            
+                    <h4>Response 204: No Content</h4>       
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 400:</h4>
+                    <h4>Response 400: Bad Request</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500:</h4>
+                    <h4>Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
                     <summary><span class="doc_method">DELETE</span>Delete phone by id</summary>
-                        <h4>Request endpoint:</h4>
-                        <em>/api/Phones?id={id}</em>
+                    <h4>Request endpoint:</h4>
+                    <em>/api/Phones?id={id}</em>
 
-                        <h4>Data Params:</h4>
-                        <p><em>id = int</em></p>
-                    
-                        <h4>Response Header:</h4>
-                        <ul>
-                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                            <li><p>Access-Control-Allow-Origin: *</p></li>
-                            <li><p>Content-Length: 205</p></li>
-                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                            <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                            <li><p>X-Powered-By: Express</p></li>
-                        </ul>
+                    <h4>Data Params:</h4>
+                    <p><em>id = int</em></p>
+                
+                    <h4>Response Header:</h4>
+                    <ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 205</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
+                    </ul>
 
-                        <h4>Response 204:</h4>
-                        <p><strong>Code:</strong> 204 OK<br></p>
-                        <p><em>No response body</em></p>
-                    
-                        <h4>Response 400:</h4>
-                        <p><em>No response body</em></p>
-                    
-                        <h4>Response 500:</h4>
-                        <p><em>No response body</em></p>    
+                    <h4>Response 204: OK</h4>
+                    <p><em>No response body</em></p>
+                
+                    <h4>Response 400: Bad Request</h4>
+                    <p><em>No response body</em></p>
+                
+                    <h4>Response 500: Server Error</h4>
+                    <p><em>No response body</em></p>    
                 </details>
                 <details>
                     <summary><span class="doc_method">DELETE</span>Reset database</summary>
@@ -411,11 +403,10 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
                     
-                    <h4>Response 204:</h4>
-                    <p><strong>Code:</strong> 204 OK<br></p>
+                    <h4>Response 204: No Content</h4>
                     <p><em>No response body</em></p>
                 
-                    <p>Response 500:</p>
+                    <p>Response 500: Server Error</p>
                     <p><em>No response body</em></p>
                 </details>
             </section>
