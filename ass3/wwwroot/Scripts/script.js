@@ -90,7 +90,7 @@ function refreshTable() {
 function updateItem(id) {
     // Patch request with input values included, callback to refreshtable
     $.ajax({
-        url: apihost + "phones/" + id,
+        url: apihost + "phones?id=" + id,
         type: 'PATCH',
         data: {
             brand: brand.val(),
@@ -108,7 +108,7 @@ function updateItem(id) {
 function removeItem(id) {
     // Delete request with input values included, callback to refreshtable
     $.ajax({
-        url: apihost + "phones/"+id,
+        url: apihost + "phones?id"+id,
         type: 'DELETE',
         success: refreshTable
     });
