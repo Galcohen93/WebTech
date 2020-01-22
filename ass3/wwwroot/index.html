@@ -177,379 +177,250 @@
                     </dl>
                 </details>
             </section>
-
             <section id="api">
                 <h2>API Documentation</h2>
                 <br>
-                <h3 class="Secondtitle">API functions:</h3>
+                <h3>API functions:</h3>
                 <details>
-                    <summary>Gel all phones</summary>
+                    <summary><span class="doc_method">GET</span>Get all phones</summary>
+                    <h4>Request endpoint:</h4>
+                    <p><em>/api/Phones/</em></p>
+
+                    <h4>Data Params:</h4>
+                    <p><em>No parameters needed for this function</em></p>
+
+                    <h4>Response Header:</h4>
                     <ul>
-                        <li>
-                        <p class="Secondtitle">Request Method:</p>
-                        <ul><p><em>GET</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Request endpoint:</p>
-                        <ul><em>/api/Phones/</em></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Data Params:</p>
-                        <ul><p><em>No parameters needed for this function</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Response Header:</p>
-                        <ul>
-                        <ul class="list_arrow">
-                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                            <li><p>Access-Control-Allow-Origin: *</p></li>
-                            <li><p>Content-Length: 410</p></li>
-                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                           <li><p>Date: Tue, 21 Jan 2020 12:47:13 GMT</p></li>
-                            <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                            <li><p>X-Powered-By: Express</p></li>
-                            </li>
-                        </ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 410</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 21 Jan 2020 12:47:13 GMT</p></li>
+                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
                     </ul>
-
-                        <li>
-                                <p class="Secondtitle">Response 200:</p>
-                                <ul>
-                                <p><strong>Code:</strong> 200 OK<br></p>
-                                    <p class="Secondtitle">Response Body:</p>                                
-                                    <table>
-                                        <th>[{
-                                            <span class="tab1"><br>
-                                                "id": int,<br>
-                                                "brand": "string",<br>
-                                                "model": "string",<br>
-                                                "os": "string",<br>
-                                                "image": "string",<br>
-                                                "screensize": int<br>
-                                            },<br>
-                                            {<br>
-                                                "id": int,<br>
-                                                "brand": "string",<br>
-                                                "model": "string",<br>
-                                                "os": "string",<br>
-                                                "image": "string",<br>
-                                                "screensize": int<br></span>
-                                            }]<br>    
-                                        </th>
-                                    </table>
-                                </ul>
-                                </li>
-                        <li>
-                        <p class="Secondtitle">Response 404:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        <li>
-                        <p class="Secondtitle">Response 500:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        </li>
-                    </ul>
-
-                </details>
-
-
-
-                <details>
-                    <summary>Gel phone by id</summary>
-                    <ul>
-                        <li>
-                        <p class="Secondtitle">Request Method:</p>
-                        <ul><p><em>GET</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Request endpoint:</p>
-                        <ul><em>/api/Phones?id= (id)</em></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Data Params:</p>
-                        <ul><p><em>id = int</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Response Header:</p>
-                        <ul>
-                        <ul class="list_arrow">
-                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                            <li><p>Access-Control-Allow-Origin: *</p></li>
-                            <li><p>Content-Length: 205</p></li>
-                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                            <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                            <li><p>X-Powered-By: Express</p></li>
-                            </li>
-                        </ul>
-                    </ul>
-
-                    <li>
-                    <p class="Secondtitle">Response 200:</p>
-                    <ul>
-                        <p><strong>Code:</strong> 200 OK<br></p>
-                        <p class="Secondtitle">Response Body:</p>                                
-                        <table>
-                            <th>{
-                                <span class="tab1"><br>
-                                    "id": int,<br>
-                                    "brand": "string",<br>
-                                    "model": "string",<br>
-                                    "os": "string",<br>
-                                    "image": "string",<br>
-                                    "screensize": int<br>
-                                }<br>   
-                            </th>
-                        </table>
-                    </ul>
-                    </li>
-                    <li>
-                    <p class="Secondtitle">Response 404:</p>
-                    <ul><p><em>No response body</em></p></ul>
-                    <li>
-                    <p class="Secondtitle">Response 500:</p>
-                    <ul><p><em>No response body</em></p></ul>
-                    </li>
-                    </ul>
-
-                    </details>
-    
-
-                <details>
-                    <summary>Add a new phone</summary>
-                    <ul>
-                        <li>
-                        <p class="Secondtitle">Request Method:</p>
-                        <ul><p><em>POST</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Request endpoint:</p>
-                        <ul><em>/api/Phones</em></ul>
-                        </li>
-                        <table>
-                            <th>
-                                <li>
-                                <p class="Secondtitle">Data Params:</p>
-                                <ul>
-                                    <p><em>/api/Phones?brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
-                                </ul>
-                                </li>
-                            </th>
-                        </table>
-                        <li>
-                        <p class="Secondtitle">Response Header:</p>
-                        <ul>
-                        <ul class="list_arrow">
-                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                            <li><p>Access-Control-Allow-Origin: *</p></li>
-                            <li><p>Content-Length: 205</p></li>
-                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                            <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
-                            <li><p>X-Powered-By: Express</p></li>
-                            <li><p>Connection: keep-alive</p></li>
-                            </li>
-                        </ul>
-                    </ul>
-
-                    <li>
-                        <p class="Secondtitle">Response 201:</p>
-                        <ul>
-                        <p><strong>Code:</strong> 201 OK<br></p>
-                        <p class="Secondtitle">Response Body:</p>                                
-                        <table>
-                            <th>{
-                                <span class="tab1"><br>
-                                    "id": int,<br>
-                                    "brand": "string",<br>
-                                    "model": "string",<br>
-                                    "os": "string",<br>
-                                    "image": "string",<br>
-                                    "screensize": int<br>
-                                }<br>   
-                            </th>
-                        </table>
-                        </ul>
-                        </li>
-                        <li>
-                        <p class="Secondtitle">Response 400:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        <li>
-                        <p class="Secondtitle">Response 500:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        </li>
-                    </ul>
-
-                </details>
-                
-
-
-                <details>
-                    <summary>Update phone</summary>
-                    <ul>
-                        <li>
-                        <p class="Secondtitle">Request Method:</p>
-                        <ul><p><em>PATCH</em></p></ul>
-                        </li>
-
-                        <li>
-                        <p class="Secondtitle">Request endpoint:</p>
-                        <ul><em>/api/Phones</em></ul>
-                        </li>
-                        <table>
-                            <th>
-                                <li>
-                                <p class="Secondtitle">Data Params:</p>
-                                <ul>
-                                    <p><em>/api/Phones?id=int&brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
-                                </ul>
-                                </li>
-                            </th>
-                        </table>
-                        <li>
-                        <p class="Secondtitle">Response Header:</p>
-                        <ul>
-                        <ul class="list_arrow">
-                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                            <li><p>Access-Control-Allow-Origin: *</p></li>
-                            <li><p>Content-Length: 205</p></li>
-                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                            <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
-                            <li><p>X-Powered-By: Express</p></li>
-                            <li><p>Connection: keep-alive</p></li>
-                            </li>
-                        </ul>
-                    </ul>
-
-                        <li>
-                        <p class="Secondtitle">Response 204:</p>
-                        <ul>
-                        <p><strong>Code:</strong> 204 OK<br></p>
-                                                            
-                            <p><em>No response body</em></p>
-                        </ul>
-                        </li>
-                        <li>
-                        <p class="Secondtitle">Response 400:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        <li>
-                        <p class="Secondtitle">Response 500:</p>
-                        <ul><p><em>No response body</em></p></ul>
-                        </li>
-                    </ul>
-
-                </details>
                     
-                    <details>
-                        <summary>Delete phone by id</summary>
+                    <h4>Response 200:</h4>
+                    <p><strong>Code:</strong> 200 OK<br></p>
+                    
+                    <h5>Response Body:</h5>                                
+                    <table>
+                        <th>[{
+                            <span class="tab1"><br>
+                                "id": int,<br>
+                                "brand": "string",<br>
+                                "model": "string",<br>
+                                "os": "string",<br>
+                                "image": "string",<br>
+                                "screensize": int<br>
+                            },<br>
+                            {<br>
+                                "id": int,<br>
+                                "brand": "string",<br>
+                                "model": "string",<br>
+                                "os": "string",<br>
+                                "image": "string",<br>
+                                "screensize": int<br></span>
+                            }]<br>    
+                        </th>
+                    </table>
+                    
+                    <h4>Response 404:</h4>
+                    <p><em>No response body</em></p>
+                    
+                    <h4>Response 500:</h4>
+                    <p><em>No response body</em></p>
+                </details>
+                <details>
+                    <summary><span class="doc_method">GET</span>Get phone by id</summary>
+
+                    <h4>Request endpoint:</h4>
+                    <em>/api/Phones?id={id}</em>
+                    
+                    <h4>Data Params:</h4>
+                    <p><em>id = int</em></p>
+
+                    <h4 class="Secondtitle">Response Header:</h4>
+                    <ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 205</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
+                    </ul>
+
+                    <h4>Response 200:</h4>
+                    <p><strong>Code:</strong> 200 OK<br></p>
+                    <h5>Response Body:</h5>                                
+                    <table>
+                        <th>{
+                            <span class="tab1"><br>
+                                "id": int,<br>
+                                "brand": "string",<br>
+                                "model": "string",<br>
+                                "os": "string",<br>
+                                "image": "string",<br>
+                                "screensize": int<br>
+                            }<br>   
+                        </th>
+                    </table>
+                    
+                    <h4>Response 404:</h4>
+                    <p><em>No response body</em></p>
+                    
+                    <h4>Response 500:</h4>
+                    <p><em>No response body</em></p>
+                </details>
+                <details>
+                    <summary><span class="doc_method">POST</span>Add a new phone</summary>
+                    
+                    <h4>Request endpoint:</h4>
+                    <em>/api/Phones</em>
+
+                    <h4>Data Params:</h4>
+                    <table>
+                        <th>
+                            <ul>
+                                <p><em>/api/Phones?brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
+                            </ul>
+                        </th>
+                    </table>
+                    
+                    <h4>Response Header:</h4>
+                    <ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 205</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                        <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
+                        <li><p>Connection: keep-alive</p></li>
+                        </li>
+                    </ul>
+
+                    <h4>Response 201:</h4>
+                    <p><strong>Code:</strong> 201 OK<br></p>
+                    
+                    <h5>Response Body:</h5>
+                    <table>
+                        <th>{
+                            <span class="tab1"><br>
+                                "id": int,<br>
+                                "brand": "string",<br>
+                                "model": "string",<br>
+                                "os": "string",<br>
+                                "image": "string",<br>
+                                "screensize": int<br>
+                            }<br>   
+                        </th>
+                    </table>
+                    
+                    <h4>Response 400:</h4>
+                    <p><em>No response body</em></p>
+                    
+                    <h4>Response 500:</h4>
+                    <p><em>No response body</em></p>
+
+                </details>
+                <details>
+                    <summary><span class="doc_method">PATCH</span>Update phone</summary>
+                    
+                    <h4>Request endpoint:</h4>
+                    <em>/api/Phones</em>
+
+                    <h4>Data Params:</h4>
+                    <table>
+                        <th>
+                            <li>
+                            <ul>
+                                <p><em>/api/Phones?id=int&brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
+                            </ul>
+                            </li>
+                        </th>
+                    </table>
+                    
+                    <h4>Response Header:</h4>
+                    <ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 205</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                        <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
+                        <li><p>Connection: keep-alive</p></li>
+                    </ul>
+
+                    <h4>Response 204:</h4>
+                    <p><strong>Code:</strong> 204 OK<br></p>
+                                                            
+                    <p><em>No response body</em></p>
+                    
+                    <h4>Response 400:</h4>
+                    <p><em>No response body</em></p>
+                    
+                    <h4>Response 500:</h4>
+                    <p><em>No response body</em></p>
+                </details>
+                <details>
+                    <summary><span class="doc_method">DELETE</span>Delete phone by id</summary>
+                        <h4>Request endpoint:</h4>
+                        <em>/api/Phones?id={id}</em>
+
+                        <h4>Data Params:</h4>
+                        <p><em>id = int</em></p>
+                    
+                        <h4>Response Header:</h4>
                         <ul>
-                            <li>
-                            <p class="Secondtitle">Request Method:</p>
-                            <ul><p><em>DELETE</em></p></ul>
-                            </li>
-    
-                            <li>
-                            <p class="Secondtitle">Request endpoint:</p>
-                            <ul><em>/api/Phones?id= (id)</em></ul>
-                            </li>
-    
-                            <li>
-                            <p class="Secondtitle">Data Params:</p>
-                            <ul><p><em>id = int</em></p></ul>
-                            </li>
-    
-                            <li>
-                            <p class="Secondtitle">Response Header:</p>
-                            <ul>
-                            <ul class="list_arrow">
-                                <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                                <li><p>Access-Control-Allow-Origin: *</p></li>
-                                <li><p>Content-Length: 205</p></li>
-                                <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                                <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                                <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                                <li><p>X-Powered-By: Express</p></li>
-                                </li>
-                            </ul>
+                            <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                            <li><p>Access-Control-Allow-Origin: *</p></li>
+                            <li><p>Content-Length: 205</p></li>
+                            <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                            <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                            <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                            <li><p>X-Powered-By: Express</p></li>
                         </ul>
-    
-                            <li>
-                            <p class="Secondtitle">Response 204:</p>
-                            <ul>
-                            <p><strong>Code:</strong> 204 OK<br></p>
-                                                                
-                                <p><em>No response body</em></p>
-                            </ul>
-                            </li>
-                            <li>
-                            <p class="Secondtitle">Response 400:</p>
-                            <ul><p><em>No response body</em></p></ul>
-                            <li>
-                            <p class="Secondtitle">Response 500:</p>
-                            <ul><p><em>No response body</em></p></ul>
-                            </li>
-                        </ul>
-    
-                    </details>
 
+                        <h4>Response 204:</h4>
+                        <p><strong>Code:</strong> 204 OK<br></p>
+                        <p><em>No response body</em></p>
+                    
+                        <h4>Response 400:</h4>
+                        <p><em>No response body</em></p>
+                    
+                        <h4>Response 500:</h4>
+                        <p><em>No response body</em></p>    
+                </details>
+                <details>
+                    <summary><span class="doc_method">DELETE</span>Reset database</summary>
+                    <h4>Request endpoint:</h4>
+                    <em>/api/Phones</em>
 
-                        <details>
-                            <summary>Reset database</summary>
-                            <ul>
-                                <li>
-                                <p class="Secondtitle">Request Method:</p>
-                                <ul><p><em>DELETE</em></p></ul>
-                                </li>
-        
-                                <li>
-                                <p class="Secondtitle">Request endpoint:</p>
-                                <ul><em>/api/Phones</em></ul>
-                                </li>
-        
-                                <li>
-                                <p class="Secondtitle">Data Params:</p>
-                                <ul><p><em>No parameters</em></p></ul>
-                                </li>
-        
-                                <li>
-                                <p class="Secondtitle">Response Header:</p>
-                                <ul>
-                                <ul class="list_arrow">
-                                    <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                                    <li><p>Access-Control-Allow-Origin: *</p></li>
-                                    <li><p>Content-Length: 205</p></li>
-                                    <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                                    <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                                    <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                                    <li><p>X-Powered-By: Express</p></li>
-                                    </li>
-                                </ul>
-                            </ul>
-                                <li>
-                                <p class="Secondtitle">Response 204:</p>
-                                <ul>
-                                <p><strong>Code:</strong> 204 OK<br></p>
-                                                                
-                                    <p><em>No response body</em></p>
-                                </ul>
-                                </li>
-                                <p class="Secondtitle">Response 500:</p>
-                                <ul><p><em>No response body</em></p></ul>
-                                </li>
-                            </ul>
-        
-                        </details>
-                     
+                    <h4>Data Params:</h4>
+                    <p><em>No parameters</em></p>
+
+                    <h4>Response Header:</h4>
+                    <ul>
+                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
+                        <li><p>Access-Control-Allow-Origin: *</p></li>
+                        <li><p>Content-Length: 205</p></li>
+                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
+                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
+                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
+                        <li><p>X-Powered-By: Express</p></li>
+                    </ul>
+                    
+                    <h4>Response 204:</h4>
+                    <p><strong>Code:</strong> 204 OK<br></p>
+                    <p><em>No response body</em></p>
+                
+                    <p>Response 500:</p>
+                    <p><em>No response body</em></p>
+                </details>
             </section>
-
-
-
             <section id="report">
                 <h2>Browser compatibility report</h2>    
                 <h3>Methods used:</h3>
