@@ -265,6 +265,22 @@ ul.list_arrow {
     margin-left: -1rem;
 }
 
+section#api details summary {
+    color: #0080c0;
+    block-size: 2em;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+section#api .Secondtitle{
+    text-decoration: underline;
+    font-weight: bolder;
+
+}
+.tab1{
+    padding-left: 20px;
+}
+
 /* Responsive queries */
 @media screen and (max-width: 860px) {
     /* Decrease font size to fit more*/

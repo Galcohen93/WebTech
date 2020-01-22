@@ -181,27 +181,28 @@
             <section id="api">
                 <h2>API Documentation</h2>
                 <br>
-                <h3><strong>API functions:</strong></h3>
+                <h3 class="Secondtitle">API functions:</h3>
                 <details>
                     <summary>Gel all phones</summary>
                     <ul>
                         <li>
-                        <p><strong>Request Method</strong></p>
+                        <p class="Secondtitle">Request Method:</p>
                         <p><em>GET</em></p>
                         </li>
 
                         <li>
-                        <p><strong>Request endpoint: <em>/api/Phones/</em></strong></p>
+                        <p class="Secondtitle">Request endpoint:</p>
+                        <em>/api/Phones/</em>
                         </li>
 
                         <li>
-                        <p><strong>Data Params</strong></p>
+                        <p class="Secondtitle">Data Params:</p>
                         <p><em>No parameters needed for this function</em></p>
                         </li>
 
                         <li>
-                        <p><strong>Response Header:</strong></p>
-                        <ul>
+                        <p class="Secondtitle">Response Header:</p>
+                        <ul class="list_arrow">
                             <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
                             <li><p>Access-Control-Allow-Origin: *</p></li>
                             <li><p>Content-Length: 410</p></li>
@@ -213,66 +214,67 @@
                         </ul>
 
                         <li>
-                        <p><strong>Response Body:</strong></p>
+                        <p class="Secondtitle">Response Body:</p>
                         <p><em>No Response Body for GET request</em></p>
                         </li>
 
                         <li>
-                        <p><strong>Response 200:</strong></p>
+                        <p class="Secondtitle">Response 200:</p>
                         <p><strong>Code:</strong> 200 OK<br></p>
                         <table>
-                                <td>
-                                    <th>
-                                        <p>[{<br>
-                                            "id": int,<br>
-                                            "brand": "string",<br>
-                                            "model": "string",<br>
-                                            "os": "string",<br>
-                                            "image": "string",<br>
-                                            "screensize": int<br>
-                                        },<br>
-                                        {<br>
-                                            "id": int,<br>
-                                            "brand": "string",<br>
-                                            "model": "string",<br>
-                                            "os": "string",<br>
-                                            "image": "string",<br>
-                                            "screensize": int<br>
-                                        }]<br></p>    
-                                </th>
-                                </td>
-                            </table>
+                            <th>[{
+                                <span class="tab1"><br>
+                                    "id": int,<br>
+                                    "brand": "string",<br>
+                                    "model": "string",<br>
+                                    "os": "string",<br>
+                                    "image": "string",<br>
+                                    "screensize": int<br>
+                                },<br>
+                                {<br>
+                                    "id": int,<br>
+                                    "brand": "string",<br>
+                                    "model": "string",<br>
+                                    "os": "string",<br>
+                                    "image": "string",<br>
+                                    "screensize": int<br></span>
+                                }]<br>    
+                            </th>
+                        </table>
                         </li>
                         <li>
-                        <p><strong>Response 400:</strong></p>
+                        <p class="Secondtitle">Response 400:</p>
                         <li>
-                        <p><strong>Response 500:</strong></p>
+                        <p class="Secondtitle">Response 500:</p>
                         </li>
                     </ul>
 
                 </details>
 
 
+
+
                 <details>
                         <summary>Gel phone by id</summary>
                         <ul>
                             <li>
-                            <p><strong>Request Method</strong></p>
+                            <p class="Secondtitle">Request Method:</p>
                             <p><em>GET</em></p>
                             </li>
     
                             <li>
-                            <p><strong>Request endpoint: <em>/api/Phones/</em> + id</strong></p>
+                            <p class="Secondtitle">Request endpoint:</p>
+                            <em>/api/Phones?id= (id)</em>
                             </li>
     
                             <li>
-                            <p><strong>Data Params</strong></p>
+                            <p class="Secondtitle">Data Params:</p>
                             <p><em>id = int</em></p>
                             </li>
     
                             <li>
-                            <p><strong>Response Header:</strong></p>
-                            <ul>
+                            <p class="Secondtitle">Response Header:</p>
+                            <ul class="list_arrow">
                                 <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
                                 <li><p>Access-Control-Allow-Origin: *</p></li>
                                 <li><p>Content-Length: 410</p></li>
@@ -284,46 +286,42 @@
                             </ul>
     
                             <li>
-                            <p><strong>Response Body:</strong></p>
-                            <p><em>No Response Body for GET request</em></p>
-                            </li>
-    
-                            <li>
-                            <p><strong>Response 200:</strong></p>
+                            <p class="Secondtitle">Response 200:</p>
                             <p><strong>Code:</strong> 200 OK<br></p>
+                            <li>
+                                    <p class="Secondtitle">Response Body:</p>
+                                    <p><em>No Response Body for GET request</em></p>
+                                    </li>
                             <table>
-                                    <td>
-                                        <th>
-                                            <p>[{<br>
-                                                "id": int,<br>
-                                                "brand": "string",<br>
-                                                "model": "string",<br>
-                                                "os": "string",<br>
-                                                "image": "string",<br>
-                                                "screensize": int<br>
-                                            },<br>
-                                            {<br>
-                                                "id": int,<br>
-                                                "brand": "string",<br>
-                                                "model": "string",<br>
-                                                "os": "string",<br>
-                                                "image": "string",<br>
-                                                "screensize": int<br>
-                                            }]<br></p>    
-                                    </th>
-                                    </td>
-                                </table>
+                                <th>[{
+                                    <span class="tab1"><br>
+                                        "id": int,<br>
+                                        "brand": "string",<br>
+                                        "model": "string",<br>
+                                        "os": "string",<br>
+                                        "image": "string",<br>
+                                        "screensize": int<br>
+                                    },<br>
+                                    {<br>
+                                        "id": int,<br>
+                                        "brand": "string",<br>
+                                        "model": "string",<br>
+                                        "os": "string",<br>
+                                        "image": "string",<br>
+                                        "screensize": int<br></span>
+                                    }]<br>    
+                                </th>
+                            </table>
                             </li>
                             <li>
-                            <p><strong>Response 400:</strong></p>
+                            <p class="Secondtitle">Response 404:</p>
                             <li>
-                            <p><strong>Response 500:</strong></p>
+                            <p class="Secondtitle">Response 500:</p>
                             </li>
                         </ul>
     
                     </details>
-    
-     
+         
 
                     <details>
                             <summary>Add a new phone</summary>
