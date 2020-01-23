@@ -80,8 +80,8 @@ app.patch("/api/phones", (req, res, next) => {
 
     if (id === undefined) { res.status(400).end() }
     else {
-        var sql = "UPDATE phones set brand = COALESCE(?,brand),model = COALESCE(?,model),os = COALESCE(?,os),image = COALESCE(?,image),screensize = COALESCE(?,screensize) WHERE id = ?";
-        var data = [req.body.brand, req.body.model, req.body.os, req.body.image, req.body.screensize, req.params.id];
+        var sql = "UPDATE phones set brand = COALESCE(NULLIF(?,''),brand),model = COALESCE(NULLIF(?,''),model),os = COALESCE(NULLIF(?,''),os),image = COALESCE(NULLIF(?,''),image),screensize = COALESCE(NULLIF(?,''),screensize) WHERE id = ?";
+        var data = [req.body.brand, req.body.model, req.body.os, req.body.image, req.body.screensize, id];
         
         db.run(sql, data, function (err) {
             if (err) { res.status(500).end(); }
