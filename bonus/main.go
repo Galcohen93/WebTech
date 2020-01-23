@@ -29,7 +29,7 @@ func main(){
 
 	createTable()
 
-	http.Handle("/", http.FileServer(http.Dir("www/")))
+	http.Handle("/", http.FileServer(http.Dir("wwwroot/")))
 
 	http.HandleFunc("/api/phones", phones)
 	http.HandleFunc("/api/reset", reset)
