@@ -87,10 +87,15 @@ function refreshTable() {
 
                 tbody.html("<tr>" + tbody.html() + responsea + "</tr>")
             }
+        },
+        error: function(){
+            // Select the db table
+            var tbody = $("#top_selling_items_table > tbody");
+            // Foreach member of the response, add a row with data
+            tbody.html("");
         }
     });
 }
-
 
 function updateItem(id) {
     // Patch request with input values included, callback to refreshtable

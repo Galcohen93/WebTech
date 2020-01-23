@@ -187,16 +187,8 @@
                     <p><em>No parameters needed for this function</em></p>
 
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 410</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 21 Jan 2020 12:47:13 GMT</p></li>
-                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                    </ul>
-                    
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
                     <h4 class="success">Response 200: OK</h4>                    
                     <h5>Response Body:</h5>
                     <pre>
@@ -230,21 +222,14 @@
                     <summary><span class="doc_method get">GET</span>Get phone by id</summary>
 
                     <h4>Request endpoint:</h4>
-                    <em>/api/Phones?id={id}</em>
+                    <p><em>/api/Phones?id={id}</em></p>
                     
                     <h4>Data Params:</h4>
                     <p><em>id = int</em></p>
 
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 205</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                    </ul>
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
 
                     <h4 class="success">Response 200: OK</h4>
                     <h5>Response Body:</h5>
@@ -271,29 +256,54 @@
                     <summary><span class="doc_method post">POST</span>Add a new phone</summary>
                     
                     <h4>Request endpoint:</h4>
-                    <em>/api/Phones</em>
+                    <p><em>/api/Phones</em></p>
 
                     <h4>Data Params:</h4>
                     <table>
-                        <th>
-                            <ul>
-                                <p><em>/api/Phones?brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
-                            </ul>
-                        </th>
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Key Value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id</td>
+                                <td>int</td>
+                                <td>The unique int identifying the item</td>
+                            </tr>
+                            <tr>
+                                <td>brand</td>
+                                <td>string</td>
+                                <td>A string to specify the brand's name</td>
+                            </tr>
+                            <tr>
+                                <td>model</td>
+                                <td>string</td>
+                                <td>A string to specify the model's name</td>
+                            </tr>
+                            <tr>
+                                <td>os</td>
+                                <td>string</td>
+                                <td>A string to specify the operating system</td>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>string</td>
+                                <td>An image attribute. Must be in the following format: "Http://THEIMAGEURL.COM/"</td>
+                            </tr>
+                            <tr>
+                                <td>screensize</td>
+                                <td>string</td>
+                                <td>A string to specify screensize</td>
+                            </tr>
+                        </tbody>
                     </table>
-                    
+
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 205</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                        <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                        <li><p>Connection: keep-alive</p></li>
-                        </li>
-                    </ul>
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
 
                     <h4 class="success">Response 201: Created</h4>                    
                     <h5>Response Body:</h5>
@@ -320,30 +330,55 @@
                     <summary><span class="doc_method patch">PATCH</span>Update phone</summary>
                     
                     <h4>Request endpoint:</h4>
-                    <em>/api/Phones</em>
+                    <p><em>/api/Phones</em></p>
+
 
                     <h4>Data Params:</h4>
                     <table>
-                        <th>
-                            <li>
-                            <ul>
-                                <p><em>/api/Phones?id=int&brand="string"&model="string"&os="string"&image="string"&screensize="string"</em></p>
-                            </ul>
-                            </li>
-                        </th>
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Key Value</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id</td>
+                                <td>int</td>
+                                <td>The unique int identifying the item</td>
+                            </tr>
+                            <tr>
+                                <td>brand</td>
+                                <td>string</td>
+                                <td>A string to specify the brand's name</td>
+                            </tr>
+                            <tr>
+                                <td>model</td>
+                                <td>string</td>
+                                <td>A string to specify the model's name</td>
+                            </tr>
+                            <tr>
+                                <td>os</td>
+                                <td>string</td>
+                                <td>A string to specify the operating system</td>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>string</td>
+                                <td>An image attribute. Must be in the following format: "Http://THEIMAGEURL.COM/"</td>
+                            </tr>
+                            <tr>
+                                <td>screensize</td>
+                                <td>string</td>
+                                <td>A string to specify screensize</td>
+                            </tr>
+                        </tbody>
                     </table>
                     
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 205</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                        <li><p>ETag: W/"57-qpu9yYjb8/qhuLz+toSiO0SkZ68"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                        <li><p>Connection: keep-alive</p></li>
-                    </ul>
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
 
                     <h4 class="success">Response 204: No Content</h4>       
                     <p><em>No response body</em></p>
@@ -357,21 +392,14 @@
                 <details>
                     <summary><span class="doc_method delete">DELETE</span>Delete phone by id</summary>
                     <h4>Request endpoint:</h4>
-                    <em>/api/Phones?id={id}</em>
+                    <p><em>/api/Phones?id={id}</em></p>
 
                     <h4>Data Params:</h4>
                     <p><em>id = int</em></p>
                 
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 205</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                    </ul>
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
 
                     <h4 class="success">Response 204: OK</h4>
                     <p><em>No response body</em></p>
@@ -385,21 +413,14 @@
                 <details>
                     <summary><span class="doc_method delete">DELETE</span>Reset database</summary>
                     <h4>Request endpoint:</h4>
-                    <em>/api/Phones</em>
+                    <p><em>/api/Phones</em></p>
 
                     <h4>Data Params:</h4>
                     <p><em>No parameters</em></p>
 
                     <h4>Response Header:</h4>
-                    <ul>
-                        <li><p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p></li>
-                        <li><p>Access-Control-Allow-Origin: *</p></li>
-                        <li><p>Content-Length: 205</p></li>
-                        <li><p>Content-Type: application/json; charset=utf-8</p></li>
-                        <li><p>Date: Tue, 22 Jan 2020 11:41:13 GMT</p></li>
-                        <li><p>ETag: W/"19a-VhoheuRHWErIx7W1gkS4kKK82FM"</p></li>
-                        <li><p>X-Powered-By: Express</p></li>
-                    </ul>
+                    <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
+                    <p>Access-Control-Allow-Origin: *</p>
                     
                     <h4 class="success">Response 204: No Content</h4>
                     <p><em>No response body</em></p>

@@ -134,6 +134,7 @@ section#api h5 {
 }
 section#api p {
     margin-top: 8px;
+    text-indent: 26px;
 }
 section#api details:focus,
 section#api summary:focus {
