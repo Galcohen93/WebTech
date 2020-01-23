@@ -95,7 +95,6 @@
                     <input type="submit" />
                 </form>
                 <button id="reset">Reset</button>
-                <button onclick="window.location.href = '#shopping_cart'">View shopping cart</button>
             </section>
             <section id="shopping_cart">
                 <h2>Your shopping cart</h2>
@@ -182,9 +181,11 @@
                     <summary><span class="doc_method get">GET</span>Get all phones</summary>
                     <h4>Request endpoint:</h4>
                     <p><em>/api/phones</em></p>
+                    
                     <h4>Response Header:</h4>
                     <p>Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization</p>
                     <p>Access-Control-Allow-Origin: *</p>
+                    
                     <h4 class="success">Response 200: OK</h4>                    
                     <h5>Response Body:</h5>
                     <pre>
@@ -244,7 +245,6 @@
 
                     <h4 class="success">Response 200: OK</h4>
                     <h5>Response Body:</h5>
-                    <p><strong>Content-type:</strong> application/json</p>
                     <pre>
 <b>Content-type:</b> application/json
 [	
