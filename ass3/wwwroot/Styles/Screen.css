@@ -127,7 +127,60 @@ section#api pre {
     background-color: white;
     border: 1px solid lightgray;
 }
+section#api h4,
+section#api h5 {
+    margin: 0;
+    margin-top: 8px;
+}
+section#api p {
+    margin-top: 8px;
+}
+section#api details:focus,
+section#api summary:focus {
+    outline: none;
+}
+section#api details summary {
+    /*color: #0080c0;*/
+    block-size: 2em;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+section#api details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+}
 
+@keyframes sweep {
+    0%    {opacity: 0; margin-left: -10px}
+    100%  {opacity: 1; margin-left: 0px}
+}
+
+section#api span.doc_method,
+section#api h4.success, 
+section#api h4.error {
+    color: white;
+    border-radius: 3px;
+    margin-right: 10px;
+    padding: 4px;
+    font-weight: 100;
+    background-color: green;
+    display: inline-block;
+}
+section#api h4.error {
+    color: white;
+    background-color: red;
+}
+section#api span.doc_method.get {
+    background-color: green;
+}
+section#api span.doc_method.post {
+    background-color: blue;
+}
+section#api span.doc_method.patch {
+    background-color: orange;
+}
+section#api span.doc_method.delete {
+    background-color: red;
+}
 .comp {
     background-color: #39b54a;
 }
@@ -271,22 +324,6 @@ ul.list_arrow {
     list-style-image: url("http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/16/Actions-arrow-right-icon.png");
     list-style-position: outside;
     margin-left: -1rem;
-}
-
-section#api details summary {
-    color: #0080c0;
-    block-size: 2em;
-    font-size: 1.5em;
-    font-weight: bolder;
-}
-
-section#api .Secondtitle{
-    text-decoration: underline;
-    font-weight: bolder;
-
-}
-.tab1{
-    padding-left: 20px;
 }
 
 /* Responsive queries */

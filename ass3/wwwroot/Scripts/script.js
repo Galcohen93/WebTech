@@ -24,6 +24,11 @@ $(document).ready(function () {
     // Initialize tablesort library on every table
     $('table').tablesort();
 
+    // Only allow one details to be open at the same time
+    $('details').click(function () {
+        $('details').not(this).removeAttr("open");
+    });
+
     // Make the reset button clickable
     $('#reset').click(resetTable);
 
@@ -78,7 +83,7 @@ function refreshTable() {
                     "<td>" + data[i].os + "</td>" +
                     "<td>" + "<img src='" + data[i].image + "'></td>" +
                     "<td data-sort-value='" + data[i].screensize + "'>" + data[i].screensize + "</td>" +
-                    "<td><a onclick='updateItem(" + data[i].id + ")'>Update</a><a onclick='removeItem(" + data[i].id + ")'>Remove</a></td>";
+                    "<td><a onclick='updateItem(" + data[i].id + ")'>Update</a><a onclick='removeItem(" + data[i].id + ")'>    Remove</a></td>";
 
                 tbody.html("<tr>" + tbody.html() + responsea + "</tr>")
             }

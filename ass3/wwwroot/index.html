@@ -179,7 +179,7 @@
                 <br>
                 <h3>API functions:</h3>
                 <details>
-                    <summary><span class="doc_method">GET</span>Get all phones</summary>
+                    <summary><span class="doc_method get">GET</span>Get all phones</summary>
                     <h4>Request endpoint:</h4>
                     <p><em>/api/Phones/</em></p>
 
@@ -197,10 +197,11 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
                     
-                    <h4>Response 200: OK</h4>                    
+                    <h4 class="success">Response 200: OK</h4>                    
                     <h5>Response Body:</h5>
-                    <p><strong>Content-type:</strong> application/json</p>
                     <pre>
+<b>Content-type:</b> application/json
+                        
 [	
     {
         "id": string,
@@ -219,14 +220,14 @@
         "screensize": int
     }
 ]</pre>
-                    <h4>Response 404: Not Found</h4>
+                    <h4 class="error">Response 404: Not Found</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="error">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
-                    <summary><span class="doc_method">GET</span>Get phone by id</summary>
+                    <summary><span class="doc_method get">GET</span>Get phone by id</summary>
 
                     <h4>Request endpoint:</h4>
                     <em>/api/Phones?id={id}</em>
@@ -245,7 +246,7 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
 
-                    <h4>Response 200: OK</h4>
+                    <h4 class="success">Response 200: OK</h4>
                     <h5>Response Body:</h5>
                     <p><strong>Content-type:</strong> application/json</p>
                     <pre>
@@ -260,14 +261,14 @@
     }
 ]</pre>
                     
-                    <h4>Response 404: Not Found</h4>
+                    <h4 class="error">Response 404: Not Found</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="success">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
-                    <summary><span class="doc_method">POST</span>Add a new phone</summary>
+                    <summary><span class="doc_method post">POST</span>Add a new phone</summary>
                     
                     <h4>Request endpoint:</h4>
                     <em>/api/Phones</em>
@@ -294,7 +295,7 @@
                         </li>
                     </ul>
 
-                    <h4>Response 201: Created</h4>                    
+                    <h4 class="success">Response 201: Created</h4>                    
                     <h5>Response Body:</h5>
                     <p><strong>Content-type:</strong> application/json</p>
                     <pre>
@@ -308,15 +309,15 @@
     }
 ]</pre>
                     
-                    <h4>Response 400: Bad Request</h4>
+                    <h4 class="error">Response 400: Bad Request</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="error">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
 
                 </details>
                 <details>
-                    <summary><span class="doc_method">PATCH</span>Update phone</summary>
+                    <summary><span class="doc_method patch">PATCH</span>Update phone</summary>
                     
                     <h4>Request endpoint:</h4>
                     <em>/api/Phones</em>
@@ -344,17 +345,17 @@
                         <li><p>Connection: keep-alive</p></li>
                     </ul>
 
-                    <h4>Response 204: No Content</h4>       
+                    <h4 class="success">Response 204: No Content</h4>       
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 400: Bad Request</h4>
+                    <h4 class="error">Response 400: Bad Request</h4>
                     <p><em>No response body</em></p>
                     
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="error">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
                 <details>
-                    <summary><span class="doc_method">DELETE</span>Delete phone by id</summary>
+                    <summary><span class="doc_method delete">DELETE</span>Delete phone by id</summary>
                     <h4>Request endpoint:</h4>
                     <em>/api/Phones?id={id}</em>
 
@@ -372,17 +373,17 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
 
-                    <h4>Response 204: OK</h4>
+                    <h4 class="success">Response 204: OK</h4>
                     <p><em>No response body</em></p>
                 
-                    <h4>Response 400: Bad Request</h4>
+                    <h4 class="error">Response 400: Bad Request</h4>
                     <p><em>No response body</em></p>
                 
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="error">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>    
                 </details>
                 <details>
-                    <summary><span class="doc_method">DELETE</span>Reset database</summary>
+                    <summary><span class="doc_method delete">DELETE</span>Reset database</summary>
                     <h4>Request endpoint:</h4>
                     <em>/api/Phones</em>
 
@@ -400,10 +401,10 @@
                         <li><p>X-Powered-By: Express</p></li>
                     </ul>
                     
-                    <h4>Response 204: No Content</h4>
+                    <h4 class="success">Response 204: No Content</h4>
                     <p><em>No response body</em></p>
                 
-                    <h4>Response 500: Server Error</h4>
+                    <h4 class="error">Response 500: Server Error</h4>
                     <p><em>No response body</em></p>
                 </details>
             </section>
