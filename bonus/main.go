@@ -24,10 +24,9 @@ type Phone struct {
 	Screensize int `json:"screensize"`
 }
 
-func main(){
-	prepareDB()
-
+func main() {
 	createTable()
+
 
 	http.Handle("/", http.FileServer(http.Dir("wwwroot/")))
 
@@ -37,10 +36,25 @@ func main(){
 	http.ListenAndServe(":8080", nil)
 }
 
-func prepareDB() {
+func createTable() {
 	db, err = sql.Open("sqlite3", "tables.db")
 	if err != nil { panic(err); os.Exit(1) }
 
+	_, err = db.Exec("CREATE TABLE phones (id INTEGER PRIMARY KEY AUTOINCREMENT, brand text, model text, os text, image text, screensize int)")
+	if err == nil {
+		prepareDB()
+		// If there is no error (DB didn't exist yet)
+		_, err = add.Exec("Apple", "iPhone X", "iOS", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png", "5")
+		if err != nil { panic(err); os.Exit(1) }
+
+		_, err = add.Exec("Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png", 6)
+		if err != nil { panic(err); os.Exit(1) }
+	} else {
+		prepareDB()
+	}
+}
+
+func prepareDB() {
 	drop, err = db.Prepare("DROP TABLE phones")
 	if err != nil { panic(err); os.Exit(1) }
 
@@ -49,18 +63,6 @@ func prepareDB() {
 
 	patch, err = db.Prepare("UPDATE phones set brand = COALESCE(?,brand),model = COALESCE(?,model),os = COALESCE(?,os),image = COALESCE(?,image),screensize = COALESCE(?,screensize) WHERE id = ?")
 	if err != nil { panic(err); os.Exit(1) }
-}
-
-func createTable() {
-	_, err = db.Exec("CREATE TABLE phones (id INTEGER PRIMARY KEY AUTOINCREMENT, brand text, model text, os text, image text, screensize int)")
-	if err == nil {
-		// If there is no error (DB didn't exist yet)
-		_, err = add.Exec("Apple", "iPhone X", "iOS", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png", "5")
-		if err != nil { panic(err); os.Exit(1) }
-
-		_, err = add.Exec("Samsung", "Galaxy s8", "Android", "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png", 6)
-		if err != nil { panic(err); os.Exit(1) }
-	}
 }
 
 func scanRowsToPhones(rows *sql.Rows) []*Phone {

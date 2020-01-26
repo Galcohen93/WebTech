@@ -1,5 +1,5 @@
 // Api url
-var apihost = "http://localhost:3000/api/"
+var apihost = "http://localhost:8080/api/"
 
 // Reference to inputs
 var brand, model, os, image, screensize;
