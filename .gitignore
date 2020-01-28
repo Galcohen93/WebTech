@@ -7,6 +7,9 @@
 ass3/node_modules/
 ass3/db.sqlite
 ass3/npm
+ass4/node_modules/
+ass4/db.sqlite
+ass4/npm
 bonus/tables.db
 
 *.DS_Store

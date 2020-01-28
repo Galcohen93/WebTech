@@ -1,13 +1,33 @@
 var express = require("express");
-var app = express();
-
-var db = require("./database.js");
-
+var sqlite3 = require("sqlite3");
 var bodyParser = require("body-parser");
+
+var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 var HTTP_PORT = 3000;
+
+
+var db = new sqlite3.Database("db.sqlite", (err) => {
+    if (err) {
+        // Can't open DB
+        console.error(err.message);
+        throw err
+    } else {
+        // DB opened
+        console.log('Connected to the SQLite database.')
+        db.run("CREATE TABLE phones (id INTEGER PRIMARY KEY AUTOINCREMENT, brand text, model text, os text, image text, screensize int)", function (err) {
+            if (!err) {
+                // Table created
+                // Add placeholder rows
+                var sql = 'INSERT INTO phones (brand, model,os,image,screensize) VALUES (?,?,?,?,?)';
+                db.run(sql, ["Apple","iPhone X","iOS","https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/IPhone_X_vector.svg/440px-IPhone_X_vector.svg.png","5"])
+                db.run(sql, ["Samsung","Galaxy s8","Android","https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Samsung_Galaxy_S8_and_S8_Plus.png/569px-Samsung_Galaxy_S8_and_S8_Plus.png","6"])
+            }
+        });  
+    }
+});
 
 app.use((req, res, next) => {
     // Headers
