@@ -17,10 +17,10 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">
+            <a href="index.html"> <!-- homepage-->
                 <img src="https://assets.kennislink.nl/system/logos/169/medium/VU_Griffioen_doorzichtig_copy.gif" alt="VU Logo">
                 <h1>VUphone</h1>
-            </a>
+            </a><!-- Menu bar-->
             <a href="#browse">Browse</a>
             <a href="#top_selling_items">Top selling items</a>
             <a href="#shopping_cart">Cart</a>
@@ -32,8 +32,8 @@
 
         </nav>
     </header>
-    <main>
-        <aside>
+    <main><!-- main-->
+        <aside><!-- side welcome section-->
             <h2>Welcome to VUphone</h2>
             <p>In this VUphone store, you can order phones and see available inventory.</p>
             <h3>Shop uses</h3>
@@ -63,11 +63,11 @@
                     </tr>
                 </tbody>
             </table>
-            <h3>Compatibility Report</h3>
+            <h3>Compatibility Report</h3> <!-- Compatibility report-->
             <p>Please also view the <a href="#report">compatibility report</a>.</p>
         </aside>
         <div>
-            <section id="top_selling_items">
+            <section id="top_selling_items"> <!-- dynamic table and form linked to the Database-->
                 <h2>Top selling items</h2>
                 <form id="top_selling_items_form" onsubmit="return putTable()">
                     <table id="top_selling_items_table">
@@ -84,7 +84,7 @@
                         </thead>
                         <tbody>
                         </tbody>
-                        <tfoot>
+                        <tfoot><!-- Add new product input form-->
                             <tr>
                                 <td><input type="text" name="brand" placeholder="Brand name" required /></td>
                                 <td><input type="text" name="model" placeholder="Model name" required /></td>
@@ -94,13 +94,13 @@
                             </tr>
                         </tfoot>
                     </table>
-                    <input type="submit" />
+                    <input type="submit" /> <!-- Sumit new product-->
                 </form>
-                <button id="reset">Reset</button>
+                <button id="reset">Reset</button> <!-- Reset dynamic table-->
             </section>
-            <section id="shopping_cart">
+            <section id="shopping_cart"> <!-- shopping cart section-->
                 <h2>Your shopping cart</h2>
-                <table>
+                <table><!-- non dynamic table-->
                     <caption>Your shopping cart:</caption>
                     <thead>
                     <tr>
@@ -124,7 +124,7 @@
                 <button>Place order</button>
                 <button>Clear cart</button>
             </section>
-            <section id="contact">
+            <section id="contact"> <!-- more information and way to reach out-->
                 <h2>Contact us!</h2>
                 <p><abbr title="Jop Zitman and Gal Cohen">J&G</abbr> contact info:</p>
                 <pre>Tel:    <a href="tel:0612345678">0612345678</a> <strong>Note:</strong> not on weekdays.<br/>Mail:   <a href="mailto:info@vu.nl">info@VU.nl</a></pre>
@@ -134,7 +134,7 @@
                     <figcaption>Map Vrije Universiteit</figcaption>
                 </figure>
             </section>
-            <section id="help">
+            <section id="help"> <!-- Q&A section-->
                 <h2>Help</h2>
                 <p>Need help in our store?</p>
                 <details>
@@ -175,7 +175,7 @@
                     </dl>
                 </details>
             </section>
-            <section id="api">
+            <section id="api"> <!-- API documentation section-->
                 <h2>API Documentation</h2>
                 <br>
                 <h3>API functions:</h3>
@@ -464,9 +464,9 @@
             </section>
 
 
-            <section id="final_report">
+            <section id="final_report"> <!-- Final report section-->
                 <h2>Self-evaluation report</h2>    
-                <p>Date: <time datetime="2020-01-28 14:00">2020-01-28</time></p>
+                <p>Date: <time datetime="2020-01-28 14:00">2020-01-28</time></p> <!-- datetime is used for accessability reasons-->
                 <p>Group 12: Gal Cohen & Jop Zitman</p>
                 <p>This is our evaluation for our Web Technology 2020 assignments. It includes an introductions, the most accessible highlights of our page, and our improvents based on our evaluation. Also see Appendix A (A-Level guidelines complies) and Appendix B (Feedbacktypes)</p>
                 
@@ -667,7 +667,7 @@
 
 
 
-            <section id="report">
+            <section id="report"> <!-- website full compatibility report-->
                 <h2>Browser compatibility report</h2>    
                 <h3>Methods used:</h3>
                 <p>We examined used HTML and CSS markups using the <a href="https://caniuse.com/" target="_blank">caniuse.com</a> website. This website compares the compatibility of elements (or attributes) between the most popular browsers. To see a view results, click on the following links to view the compatibility result of their respective element.</p>
@@ -746,7 +746,7 @@
                 <h3>HTML5: </h3>
                 <p></p>
             </section>
-            <section id="browse">
+            <section id="browse"> <!-- non dynamic browse phone section-->
                 <h2>Available Phones</h2>
                 <p>Already bored of this page? View the <a href="#top_selling_items">top selling items</a>!</p>
                 <h3>Apple</h3>
@@ -790,4 +790,4 @@
         </div>
     </footer>
 </body>
-</html>
+</html><!-- Thank you for TAing, Jop thinks you are cute. If you are interested contact his VU mail-->
