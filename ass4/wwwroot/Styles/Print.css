@@ -3,11 +3,13 @@
         widows: 2;
         orphans: 2;
     }
-    section h1, section h2 {
-        page-break-before: always;
-    }
     aside {
         page-break-after: always;
+    }
+    table { page-break-inside:auto }
+    tr    { page-break-inside:avoid; page-break-after:auto }
+    figure {
+        page-break-inside: avoid;
     }
     main {
         display: block;
