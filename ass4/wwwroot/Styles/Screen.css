@@ -71,8 +71,6 @@ main > div {
     float: left;
     height: 100%;
     overflow-y: auto;
-    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png");
-    background-repeat: repeat;
 }
 
 /* Sidebar */
