@@ -188,6 +188,23 @@ section#api span.doc_method.delete {
 .notComp {
     background-color: #c44230;
 }
+.noApplic {
+    background-color: dodgerblue;
+}
+
+.comp:after {
+    content: "Compatible";
+    color: #39b54a;
+}
+.notComp:after {
+    content: "Not compatible";
+    color: #c44230;
+}
+.noApplic:after {
+    content: "Not applicable";
+    color: dodgerblue;
+}
+
 /* Specific styling */
 figure {
     padding: 0;
